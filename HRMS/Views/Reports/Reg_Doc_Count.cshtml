@@ -1,0 +1,223 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HRMS REPORTS</title>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+    <link href="~/Scripts/StyleSheet1.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
+   
+
+    <script type="text/javascript">
+        //$(function () {
+        $(document).ready(function () {
+            $('#tbl thead tr')
+                .clone(true)
+                .addClass('filters')
+                .appendTo('#tbl thead');
+
+            //$("#tbl").empty();
+            $.ajax({
+                type: "POST",
+                url: "/Reports/Reg_Wise_Doc_Count",
+                data: '{}',
+                //contentType: "application/json; charset=utf-8",
+                //dataType: "json",
+                success: function (obj) {
+                   
+                    var d = new Date();
+                    d + '';
+                    var i = 1;
+                    $("#tbl").DataTable({
+                        orderCellsTop: true,
+                        fixedHeader: true,
+                        initComplete: function () {
+                            var api = this.api();
+                            api
+                                .columns()
+                                .eq(0)
+                                .each(function (colIdx) {
+                                    // Set the header cell to contain the input element
+                                    var cell = $('.filters th').eq(
+                                        $(api.column(colIdx).header()).index()
+                                    );
+                                    var title = $(cell).text();
+                                    $(cell).html('<input type="text" style="color:black;height:35px" placeholder="' + 'Search' + '" />');
+
+                                    // On every keypress in this input
+                                    $(
+                                        'input',
+                                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                                    )
+                                        .off('keyup change')
+                                        .on('change', function (e) {
+                                            // Get the search value
+                                            $(this).attr('title', $(this).val());
+                                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+
+                                            var cursorPosition = this.selectionStart;
+                                            // Search the column for that value
+                                            api
+                                                .column(colIdx)
+                                                .search(
+                                                    this.value != ''
+                                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                                        : '',
+                                                    this.value != '',
+                                                    this.value == ''
+                                                )
+                                                .draw();
+                                        })
+                                        .on('keyup', function (e) {
+                                            e.stopPropagation();
+
+                                            $(this).trigger('change');
+                                            $(this)
+                                                .focus()[0]
+                                                .setSelectionRange(cursorPosition, cursorPosition);
+                                        });
+                                });
+                        },
+
+                        responsive: true,
+                        searching: true,
+                        bLengthChange: true,
+                        //lengthMenu: [[10, 20, -1], [10, 20, "All"]],
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            ['10 rows', '25 rows', '50 rows', 'Show all']
+                        ],
+                        bFilter: true,
+                        bSort: true,
+                        bPaginate: true,
+                        data: obj,
+                        columns: [
+                            {
+                                "render": function (data, type, full, meta) {
+                                    return '<b style="color:darkred;">' + (i++) + '</b>';
+                                }
+                            },
+                            { "data": "Emp_Code" },
+                            { "data": "Doc_Count" },
+                            {
+                                "render": function (data, type, row, full, meta) {
+                                    var tempdata = "";
+                                    if (row['Doc_Count'] > 0) {
+                                        //var a = ParseInt(row['pk_Emp_id']);
+                                        tempdata = '<a style="color:green;" target="_blank" href="/Admin/Doc/?ID=/' + row['Emp_Code'] + '">' + '<h5>' + 'VIEW DOCS' + '</h5>' + '</a>'; //'<b style="color:blue;">' + data + '</b>';
+                                    }
+                                    else {
+                                        tempdata = '<h5 style="color:blue;">' + 'NO DOCS AVAILABLE' + '</h5>';
+                                    }
+                                    return tempdata;
+                                }
+
+                            }
+                            //{ "data": "Registration_Type" },
+                            //{ "data": "TOTAL_COUNT" }
+                        ],
+                        dom: 'Bfrtip',
+                        //dom: 'Blfrtip',
+                        buttons: [
+
+                            'pageLength',
+
+                            {
+                                extend: 'excelHtml5',
+                                text: 'Download Excel',
+                                className: 'red',
+                                filename: 'District_Wise_Count_' + d.toDateString(),//we can use it as  title: 'District_Wise_Count_' + d.toDateString()
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            'colvis',
+                        ]
+
+                    });
+                },
+                failure: function () {
+                    alert("Data not found !");
+                },
+                error: function () {
+                    alert("Some error occured !");
+                }
+
+            });
+        });
+
+    </script>
+    <style>
+        thead input {
+            width: 100%;
+        }
+        .dt-button.red {
+            color: red;
+            margin-bottom: 20px
+        }
+
+        .dt-button.orange {
+            color: orange;
+        }
+
+        .dt-button.green {
+            color: green;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+            .sticky + .content {
+                padding-top: 102px;
+            }
+    </style>
+</head>
+<body>
+    <h2 class="content"><b>HRMS REPORTS <br /><span style="color:skyblue">EMPLOYEE WISE DOCUMENT COUNT</span></b></h2>
+
+    <div class="table-wrapper">
+        <div>
+            <h4><b><i class="fa fa-arrow-circle-left" style="font-size:24px;color:dodgerblue;"></i> &nbsp;@Html.ActionLink("REPORT PANEL", "ReportPanel", "Reports")</b></h4>
+        </div>
+            <table id="tbl" cellspacing="0" class="table table-bordered fl-table">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>EMPLOYEE CODE</th>
+                        <th>DOCUMENT COUNT</th>
+                        <th>VIEW ALL DOCUMENTS</th>
+                    </tr>
+                </thead>
+            </table>
+    </div>
+</body>
+</html>

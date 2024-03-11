@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_HRMSModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'DB_HRMS.dbo.'Agriculture Manpower$'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="'Agriculture Manpower$'">
+          <Property Name="S# No#" Type="float" />
+          <Property Name="Name of Mandal" Type="nvarchar" MaxLength="255" />
+          <Property Name="District Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pariyojna" Type="nvarchar" MaxLength="255" />
+          <Property Name="Designations" Type="nvarchar" MaxLength="255" />
+          <Property Name="Salary" Type="float" />
+        </EntityType>-->
+  <EntityType Name="Tbl_Emp_Credential">
+    <Key>
+      <PropertyRef Name="Pk_ID" />
+    </Key>
+    <Property Name="Pk_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fk_Emp_Id" Type="int" />
+    <Property Name="Emp_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Emp_Mail_Id" Type="varchar" MaxLength="200" />
+    <Property Name="Emp_Id" Type="varchar" MaxLength="50" />
+    <Property Name="Emp_Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="OldPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginCount" Type="int" />
+    <Property Name="Is_OTP" Type="varchar" MaxLength="10" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Verify_Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Employee_Docs">
+    <Key>
+      <PropertyRef Name="pk_Doc_Id" />
+    </Key>
+    <Property Name="pk_Doc_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_Emp_Id" Type="int" />
+    <Property Name="Emp_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Doc_Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Doc_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Doc_Id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doc_Sr_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doc_Path" Type="nvarchar(max)" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="created_IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Verify_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Verify_Date" Type="datetime" />
+    <Property Name="Verify_Remark" Type="nvarchar(max)" />
+    <Property Name="verified_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Verify_IP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Employee_Registration">
+    <Key>
+      <PropertyRef Name="pk_Emp_id" />
+    </Key>
+    <Property Name="pk_Emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emp_Code" Type="varchar" MaxLength="50" />
+    <Property Name="fk_Mandal_id" Type="int" />
+    <Property Name="Mandal_Name" Type="varchar" MaxLength="100" />
+    <Property Name="fk_Dist_Id" Type="int" />
+    <Property Name="District_Name" Type="varchar" MaxLength="100" />
+    <Property Name="fk_Pariyojana_ID" Type="int" />
+    <Property Name="Pariyojana" Type="nvarchar" MaxLength="500" />
+    <Property Name="fk_Designation_ID" Type="int" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="10" />
+    <Property Name="Emp_post_id" Type="int" />
+    <Property Name="Emp_post_Add" Type="varchar" MaxLength="100" />
+    <Property Name="Postal_Code" Type="varchar" MaxLength="10" />
+    <Property Name="Emp_Name" Type="varchar" MaxLength="250" />
+    <Property Name="F_Name" Type="varchar" MaxLength="250" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Mobile_No" Type="varchar" MaxLength="12" />
+    <Property Name="Alternate_Mob_No" Type="varchar" MaxLength="12" />
+    <Property Name="Aadhar_No" Type="varchar" MaxLength="20" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" />
+    <Property Name="PAN_NO" Type="varchar" MaxLength="50" />
+    <Property Name="Email_id" Type="varchar" MaxLength="500" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="SPR_NO" Type="varchar" MaxLength="50" />
+    <Property Name="Emp_Category" Type="varchar" MaxLength="50" />
+    <Property Name="Sub_category" Type="varchar" MaxLength="50" />
+    <Property Name="Bank_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Account_No" Type="varchar" MaxLength="20" />
+    <Property Name="IFSC_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Branch_Name" Type="varchar" MaxLength="100" />
+    <Property Name="UAN_No" Type="varchar" MaxLength="50" />
+    <Property Name="ESIC_No" Type="varchar" MaxLength="50" />
+    <Property Name="Nationality" Type="varchar" MaxLength="100" />
+    <Property Name="Corres_Address" Type="varchar" MaxLength="500" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="Physically_Challenged" Type="varchar" MaxLength="10" />
+    <Property Name="Territory" Type="varchar" MaxLength="100" />
+    <Property Name="Exp_In_Yrs" Type="int" />
+    <Property Name="Photo" Type="varchar" MaxLength="500" />
+    <Property Name="Sign" Type="varchar" MaxLength="500" />
+    <Property Name="Is_Active" Type="varchar" MaxLength="10" />
+    <Property Name="Created_date" Type="datetime" />
+    <Property Name="Profile_Status" Type="varchar" MaxLength="20" />
+    <Property Name="Verify_Status" Type="varchar" MaxLength="10" />
+    <Property Name="Verified_By" Type="varchar" MaxLength="50" />
+    <Property Name="Verify_Date" Type="datetime" />
+    <Property Name="Verify_Remark" Type="nvarchar(max)" />
+    <Property Name="Identification_Id" Type="varchar" MaxLength="10" />
+    <Property Name="Registration_Type" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Designation">
+    <Key>
+      <PropertyRef Name="pk_Designation_id" />
+    </Key>
+    <Property Name="pk_Designation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="100" />
+    <Property Name="fk_Pariyojana_Id" Type="int" />
+    <Property Name="Pariyojana_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_District">
+    <Key>
+      <PropertyRef Name="pk_Dis_ID" />
+    </Key>
+    <Property Name="pk_Dis_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="District_Name" Type="varchar" MaxLength="100" />
+    <Property Name="fk_Mandal_id" Type="int" />
+    <Property Name="DistrictCode" Type="varchar" MaxLength="10" />
+    <Property Name="Field_1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Mandal">
+    <Key>
+      <PropertyRef Name="pk_id" />
+    </Key>
+    <Property Name="pk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mandal_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Mandal_Code" Type="varchar" MaxLength="10" />
+    <Property Name="Feild_1" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Pariyojana">
+    <Key>
+      <PropertyRef Name="pk__Pariyojana_Id" />
+    </Key>
+    <Property Name="pk__Pariyojana_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pariyojana_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Pariyojana" Type="nvarchar" MaxLength="500" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Master_Salary">
+    <Key>
+      <PropertyRef Name="pk_Salary_id" />
+    </Key>
+    <Property Name="pk_Salary_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Salary" Type="bigint" />
+    <Property Name="is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Yojana_Designation_Salary">
+    <Key>
+      <PropertyRef Name="pk__des_id" />
+    </Key>
+    <Property Name="pk__des_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mandal_Name" Type="varchar" MaxLength="50" />
+    <Property Name="fk_Mandal_id" Type="int" />
+    <Property Name="District_Name" Type="varchar" MaxLength="100" />
+    <Property Name="fk_District_id" Type="int" />
+    <Property Name="fk_Pariyojana_Id" Type="int" />
+    <Property Name="Pariyojana_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Pariyojana_Code" Type="varchar" MaxLength="20" />
+    <Property Name="fk_Designation_Id" Type="int" />
+    <Property Name="Designations_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Designations_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Salary" Type="varchar" MaxLength="10" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Notice">
+    <Key>
+      <PropertyRef Name="PK_Notice_ID" />
+    </Key>
+    <Property Name="PK_Notice_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Notice_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notice_Path" Type="nvarchar" MaxLength="500" />
+    <Property Name="Notice_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Fk_Emp_id" Type="bigint" />
+    <Property Name="Fk_Mandal_id" Type="nchar" MaxLength="10" />
+    <Property Name="Is_Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_UserDetail">
+    <Key>
+      <PropertyRef Name="Pk_Login_Id" />
+    </Key>
+    <Property Name="Pk_Login_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <Function Name="BackupDatabase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="databaseName" Type="nvarchar" Mode="In" />
+    <Parameter Name="backupPath" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Emp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Emp_Code" Type="varchar" Mode="In" />
+    <Parameter Name="Emp_Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DownloadSlip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pk_Emp_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_Notice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="path" Type="nvarchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notice_Type" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fk_MAndal_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fk_Emp_id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_Verify_doc_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Emp_code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DIST_PARIYOJANA_REG_DOC_COUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_District_Pariyojana_RegType_Count_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sp_Emp_Reg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fk_Mandal_id" Type="int" Mode="In" />
+    <Parameter Name="Mandal_Name" Type="varchar" Mode="In" />
+    <Parameter Name="fk_Dist_Id" Type="int" Mode="In" />
+    <Parameter Name="District_Name" Type="varchar" Mode="In" />
+    <Parameter Name="pk_Designation_ID" Type="int" Mode="In" />
+    <Parameter Name="pk_Pariyojana_ID" Type="int" Mode="In" />
+    <Parameter Name="Salary" Type="nvarchar" Mode="In" />
+    <Parameter Name="Emp_post_Add" Type="varchar" Mode="In" />
+    <Parameter Name="Postal_Code" Type="varchar" Mode="In" />
+    <Parameter Name="Emp_Name" Type="varchar" Mode="In" />
+    <Parameter Name="F_Name" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="Address" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Mobile_No" Type="varchar" Mode="In" />
+    <Parameter Name="Alternate_Mob_No" Type="varchar" Mode="In" />
+    <Parameter Name="Aadhar_No" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="PAN_NO" Type="varchar" Mode="In" />
+    <Parameter Name="Email_id" Type="varchar" Mode="In" />
+    <Parameter Name="SPR_NO" Type="varchar" Mode="In" />
+    <Parameter Name="Emp_Category" Type="varchar" Mode="In" />
+    <Parameter Name="Sub_category" Type="varchar" Mode="In" />
+    <Parameter Name="Bank_Name" Type="varchar" Mode="In" />
+    <Parameter Name="Account_No" Type="varchar" Mode="In" />
+    <Parameter Name="IFSC_Code" Type="varchar" Mode="In" />
+    <Parameter Name="Branch_Name" Type="varchar" Mode="In" />
+    <Parameter Name="UAN_No" Type="varchar" Mode="In" />
+    <Parameter Name="ESIC_No" Type="varchar" Mode="In" />
+    <Parameter Name="Nationality" Type="varchar" Mode="In" />
+    <Parameter Name="Corres_Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Physically_Challenged" Type="varchar" Mode="In" />
+    <Parameter Name="Territory" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_In_Yrs" Type="int" Mode="In" />
+    <Parameter Name="Created_date" Type="datetime" Mode="In" />
+    <Parameter Name="Identification_Id" Type="varchar" Mode="In" />
+    <Parameter Name="Registration_Type" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_REG_WISE_DOC_COUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_REG_WISE_DOC_COUNT_FILTER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fk_Mandal_id" Type="int" Mode="In" />
+    <Parameter Name="fk_Dist_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_REPORT_VERIFIED_COUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DB_HRMSModel2StoreContainer">
+    <EntitySet Name="Tbl_Emp_Credential" EntityType="Self.Tbl_Emp_Credential" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Employee_Docs" EntityType="Self.tbl_Employee_Docs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Employee_Registration" EntityType="Self.tbl_Employee_Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Master_Designation" EntityType="Self.Tbl_Master_Designation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Master_District" EntityType="Self.Tbl_Master_District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Master_Mandal" EntityType="Self.Tbl_Master_Mandal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Master_Pariyojana" EntityType="Self.Tbl_Master_Pariyojana" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Master_Salary" EntityType="Self.tbl_Master_Salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Master_Yojana_Designation_Salary" EntityType="Self.Tbl_Master_Yojana_Designation_Salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Notice" EntityType="Self.Tbl_Notice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_UserDetail" EntityType="Self.tbl_UserDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,151 @@
+﻿@model HRMS.Models.Emp_Detail
+
+@{
+    ViewBag.Title = "Emp_Details";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    
+    <style type="text/css">
+
+        #deceased {
+            background-color: #FFF3F5;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .remove_field {
+            float: right;
+            cursor: pointer;
+            position: absolute;
+        }
+
+            .remove_field:hover {
+                text-decoration: none;
+            }
+    </style>
+
+
+</head>
+<body style="margin-top:50px">
+    @using (Html.BeginForm("Emp_Details", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="panel panel-primary" style="margin:20px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registration Form</h3>
+            </div>
+            <div class="panel-body" id="dv_srch">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="name">Mandal *	</label>
+
+                        @Html.DropDownListFor(Model => Model.Mandal_ID, new SelectList(ViewBag.Mandal, "pk_id", "Mandal_Name"), "--Select--", new { @onchange = "BIND_DIST();", @id = "ddlMandal", @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(Model => Model.Mandal_ID, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="name">District *</label>
+
+                        @Html.DropDownListFor(Model => Model.District_ID, new SelectList(string.Empty, "Value", "Text"), "--Select--", new { @id = "ddlDist", @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(Model => Model.District_ID, "", new { @class = "text-danger" })
+
+                    </div>
+                    
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="name">Pariyojana *</label>
+
+                        @Html.DropDownListFor(Model => Model.Pariyojana_ID, new SelectList(ViewBag.Pariyojana, "pk__Pariyojana_Id", "Pariyojana"), "--Select--", new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(Model => Model.Pariyojana_ID, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="name">Designation *</label>
+
+                        @Html.DropDownListFor(Model => Model.Designation_ID, new SelectList(ViewBag.Designation, "pk_Designation_id", "Designation"), "--Select--", new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(Model => Model.Designation_ID, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="city">Salary *</label>
+
+                        @Html.DropDownListFor(Model => Model.Salary_ID, new SelectList(ViewBag.Salary, "Salary", "Salary"), "--Select--", new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(Model => Model.Salary_ID, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="city">Registration Type *</label>
+
+                        @Html.DropDownListFor(Model => Model.RegistartionType, new SelectList(ViewBag.OldNewRegistration, "Text", "Text"), new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(Model => Model.RegistartionType, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-group col-md-3 col-sm-3 pull-left">
+                            <input type="submit" class="btn btn-primary" value="Next" id="btn_proceed" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    }
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+        function BIND_DIST() {
+           
+            $.ajax({
+                url: '/Home/Bind_District',
+                type: 'post',
+                data: { Mid: $("#ddlMandal").val() },
+                success: function (obj) {
+                    var obj1 = JSON.parse(obj);
+                    $("#ddlDist").empty();
+                    $("#ddlDist").append($('<option></option>').html("--Select--").val(0));
+                    for (var i = 0; i < obj1.length; i++) {
+                        $("#ddlDist").append($('<option></option>').val(obj1[i].pk_Dis_ID).html(obj1[i].District_Name));
+                    }
+                },
+                error: function () {
+                    $("#ddlDist").empty();
+                    $("#ddlDist").append($('<option></option>').html("--Select--").val(0));
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

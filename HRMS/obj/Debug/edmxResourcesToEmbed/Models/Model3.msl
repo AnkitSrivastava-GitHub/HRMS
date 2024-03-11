@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_HRMSModel1StoreContainer" CdmEntityContainer="DB_HRMSEntities2">
+    <EntitySetMapping Name="Tbl_Emp_Credential">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Emp_Credential">
+        <MappingFragment StoreEntitySet="Tbl_Emp_Credential">
+          <ScalarProperty Name="Pk_ID" ColumnName="Pk_ID" />
+          <ScalarProperty Name="Fk_Emp_Id" ColumnName="Fk_Emp_Id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="Emp_Mail_Id" ColumnName="Emp_Mail_Id" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Emp_Password" ColumnName="Emp_Password" />
+          <ScalarProperty Name="OldPassword" ColumnName="OldPassword" />
+          <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+          <ScalarProperty Name="Is_OTP" ColumnName="Is_OTP" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Master_Designation">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Master_Designation">
+        <MappingFragment StoreEntitySet="Tbl_Master_Designation">
+          <ScalarProperty Name="pk_Designation_id" ColumnName="pk_Designation_id" />
+          <ScalarProperty Name="Designation_Code" ColumnName="Designation_Code" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="fk_Pariyojana_Id" ColumnName="fk_Pariyojana_Id" />
+          <ScalarProperty Name="Pariyojana_Code" ColumnName="Pariyojana_Code" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Master_District">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Master_District">
+        <MappingFragment StoreEntitySet="Tbl_Master_District">
+          <ScalarProperty Name="pk_Dis_ID" ColumnName="pk_Dis_ID" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="Field_1" ColumnName="Field_1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Master_Mandal">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Master_Mandal">
+        <MappingFragment StoreEntitySet="Tbl_Master_Mandal">
+          <ScalarProperty Name="pk_id" ColumnName="pk_id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="Mandal_Code" ColumnName="Mandal_Code" />
+          <ScalarProperty Name="Feild_1" ColumnName="Feild_1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Master_Pariyojana">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Master_Pariyojana">
+        <MappingFragment StoreEntitySet="Tbl_Master_Pariyojana">
+          <ScalarProperty Name="pk__Pariyojana_Id" ColumnName="pk__Pariyojana_Id" />
+          <ScalarProperty Name="Pariyojana_Code" ColumnName="Pariyojana_Code" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Master_Yojana_Designation_Salary">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Master_Yojana_Designation_Salary">
+        <MappingFragment StoreEntitySet="Tbl_Master_Yojana_Designation_Salary">
+          <ScalarProperty Name="pk__des_id" ColumnName="pk__des_id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_District_id" ColumnName="fk_District_id" />
+          <ScalarProperty Name="fk_Pariyojana_Id" ColumnName="fk_Pariyojana_Id" />
+          <ScalarProperty Name="Pariyojana_Name" ColumnName="Pariyojana_Name" />
+          <ScalarProperty Name="Pariyojana_Code" ColumnName="Pariyojana_Code" />
+          <ScalarProperty Name="fk_Designation_Id" ColumnName="fk_Designation_Id" />
+          <ScalarProperty Name="Designations_Name" ColumnName="Designations_Name" />
+          <ScalarProperty Name="Designations_Code" ColumnName="Designations_Code" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Notice">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.Tbl_Notice">
+        <MappingFragment StoreEntitySet="Tbl_Notice">
+          <ScalarProperty Name="Fk_Mandal_id" ColumnName="Fk_Mandal_id" />
+          <ScalarProperty Name="Fk_Emp_id" ColumnName="Fk_Emp_id" />
+          <ScalarProperty Name="Notice_Type" ColumnName="Notice_Type" />
+          <ScalarProperty Name="PK_Notice_ID" ColumnName="PK_Notice_ID" />
+          <ScalarProperty Name="Notice_Path" ColumnName="Notice_Path" />
+          <ScalarProperty Name="Notice_Name" ColumnName="Notice_Name" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UserDetail">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.tbl_UserDetail">
+        <MappingFragment StoreEntitySet="tbl_UserDetail">
+          <ScalarProperty Name="Pk_Login_Id" ColumnName="Pk_Login_Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Emp_Login" FunctionName="DB_HRMSModel1.Store.Emp_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.Emp_Login_Result">
+          <ScalarProperty Name="msg" ColumnName="msg" />
+          <ScalarProperty Name="Pk_ID" ColumnName="Pk_ID" />
+          <ScalarProperty Name="Fk_Emp_Id" ColumnName="Fk_Emp_Id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="Emp_Mail_Id" ColumnName="Emp_Mail_Id" />
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Emp_Password" ColumnName="Emp_Password" />
+          <ScalarProperty Name="OldPassword" ColumnName="OldPassword" />
+          <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+          <ScalarProperty Name="Is_OTP" ColumnName="Is_OTP" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_Employee_Docs">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.tbl_Employee_Docs">
+        <MappingFragment StoreEntitySet="tbl_Employee_Docs">
+          <ScalarProperty Name="Verify_IP" ColumnName="Verify_IP" />
+          <ScalarProperty Name="verified_By" ColumnName="verified_By" />
+          <ScalarProperty Name="Verify_Remark" ColumnName="Verify_Remark" />
+          <ScalarProperty Name="Verify_Date" ColumnName="Verify_Date" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="created_IP" ColumnName="created_IP" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Doc_Path" ColumnName="Doc_Path" />
+          <ScalarProperty Name="Doc_Sr_No" ColumnName="Doc_Sr_No" />
+          <ScalarProperty Name="Doc_Id" ColumnName="Doc_Id" />
+          <ScalarProperty Name="Doc_Name" ColumnName="Doc_Name" />
+          <ScalarProperty Name="Doc_Type" ColumnName="Doc_Type" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="fk_Emp_Id" ColumnName="fk_Emp_Id" />
+          <ScalarProperty Name="pk_Doc_Id" ColumnName="pk_Doc_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee_Registration">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.tbl_Employee_Registration">
+        <MappingFragment StoreEntitySet="tbl_Employee_Registration">
+          <ScalarProperty Name="Registration_Type" ColumnName="Registration_Type" />
+          <ScalarProperty Name="Identification_Id" ColumnName="Identification_Id" />
+          <ScalarProperty Name="Verify_Remark" ColumnName="Verify_Remark" />
+          <ScalarProperty Name="Verify_Date" ColumnName="Verify_Date" />
+          <ScalarProperty Name="Verified_By" ColumnName="Verified_By" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="Profile_Status" ColumnName="Profile_Status" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Exp_In_Yrs" ColumnName="Exp_In_Yrs" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="Physically_Challenged" ColumnName="Physically_Challenged" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Corres_Address" ColumnName="Corres_Address" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="ESIC_No" ColumnName="ESIC_No" />
+          <ScalarProperty Name="UAN_No" ColumnName="UAN_No" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Sub_category" ColumnName="Sub_category" />
+          <ScalarProperty Name="Emp_Category" ColumnName="Emp_Category" />
+          <ScalarProperty Name="SPR_NO" ColumnName="SPR_NO" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Alternate_Mob_No" ColumnName="Alternate_Mob_No" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+          <ScalarProperty Name="Emp_post_Add" ColumnName="Emp_post_Add" />
+          <ScalarProperty Name="Emp_post_id" ColumnName="Emp_post_id" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="fk_Designation_ID" ColumnName="fk_Designation_ID" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="pk_Emp_id" ColumnName="pk_Emp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Notice" FunctionName="DB_HRMSModel1.Store.Proc_Notice" />
+    <FunctionImportMapping FunctionImportName="Sp_Emp_Reg" FunctionName="DB_HRMSModel1.Store.Sp_Emp_Reg">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.Sp_Emp_Reg_Result">
+          <ScalarProperty Name="pk_Emp_id" ColumnName="pk_Emp_id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="fk_Designation_ID" ColumnName="fk_Designation_ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Emp_post_id" ColumnName="Emp_post_id" />
+          <ScalarProperty Name="Emp_post_Add" ColumnName="Emp_post_Add" />
+          <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Alternate_Mob_No" ColumnName="Alternate_Mob_No" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SPR_NO" ColumnName="SPR_NO" />
+          <ScalarProperty Name="Emp_Category" ColumnName="Emp_Category" />
+          <ScalarProperty Name="Sub_category" ColumnName="Sub_category" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="UAN_No" ColumnName="UAN_No" />
+          <ScalarProperty Name="ESIC_No" ColumnName="ESIC_No" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Corres_Address" ColumnName="Corres_Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Physically_Challenged" ColumnName="Physically_Challenged" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="Exp_In_Yrs" ColumnName="Exp_In_Yrs" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Profile_Status" ColumnName="Profile_Status" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="Verified_By" ColumnName="Verified_By" />
+          <ScalarProperty Name="Verify_Date" ColumnName="Verify_Date" />
+          <ScalarProperty Name="Verify_Remark" ColumnName="Verify_Remark" />
+          <ScalarProperty Name="Identification_Id" ColumnName="Identification_Id" />
+          <ScalarProperty Name="Registration_Type" ColumnName="Registration_Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_Master_Salary">
+      <EntityTypeMapping TypeName="DB_HRMSModel1.tbl_Master_Salary">
+        <MappingFragment StoreEntitySet="tbl_Master_Salary">
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="pk_Salary_id" ColumnName="pk_Salary_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_DownloadSlip" FunctionName="DB_HRMSModel1.Store.Proc_DownloadSlip">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.Proc_DownloadSlip_Result">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="pk_Emp_id" ColumnName="pk_Emp_id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="fk_Designation_ID" ColumnName="fk_Designation_ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Emp_post_id" ColumnName="Emp_post_id" />
+          <ScalarProperty Name="Emp_post_Add" ColumnName="Emp_post_Add" />
+          <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Alternate_Mob_No" ColumnName="Alternate_Mob_No" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SPR_NO" ColumnName="SPR_NO" />
+          <ScalarProperty Name="Emp_Category" ColumnName="Emp_Category" />
+          <ScalarProperty Name="Sub_category" ColumnName="Sub_category" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="UAN_No" ColumnName="UAN_No" />
+          <ScalarProperty Name="ESIC_No" ColumnName="ESIC_No" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Corres_Address" ColumnName="Corres_Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Physically_Challenged" ColumnName="Physically_Challenged" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="Exp_In_Yrs" ColumnName="Exp_In_Yrs" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Profile_Status" ColumnName="Profile_Status" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="Verified_By" ColumnName="Verified_By" />
+          <ScalarProperty Name="Verify_Date" ColumnName="Verify_Date" />
+          <ScalarProperty Name="Verify_Remark" ColumnName="Verify_Remark" />
+          <ScalarProperty Name="Identification_Id" ColumnName="Identification_Id" />
+          <ScalarProperty Name="Registration_Type" ColumnName="Registration_Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Verify_doc_Admin" FunctionName="DB_HRMSModel1.Store.Proc_Verify_doc_Admin" />
+    <FunctionImportMapping FunctionImportName="sp_District_Pariyojana_RegType_Count_Report" FunctionName="DB_HRMSModel1.Store.sp_District_Pariyojana_RegType_Count_Report">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.sp_District_Pariyojana_RegType_Count_Report_Result">
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="Pariyojana_Name" ColumnName="Pariyojana_Name" />
+          <ScalarProperty Name="Registration_Type" ColumnName="Registration_Type" />
+          <ScalarProperty Name="TOTAL_COUNT" ColumnName="TOTAL_COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_REPORT_VERIFIED_COUNT" FunctionName="DB_HRMSModel1.Store.SP_REPORT_VERIFIED_COUNT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.SP_REPORT_VERIFIED_COUNT_Result">
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="Pariyojana_Name" ColumnName="Pariyojana_Name" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="TOTAL_COUNT" ColumnName="TOTAL_COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_REG_WISE_DOC_COUNT" FunctionName="DB_HRMSModel1.Store.SP_REG_WISE_DOC_COUNT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.SP_REG_WISE_DOC_COUNT_Result">
+          <ScalarProperty Name="DOB1" ColumnName="DOB1" />
+          <ScalarProperty Name="pk_Emp_id" ColumnName="pk_Emp_id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="fk_Designation_ID" ColumnName="fk_Designation_ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Emp_post_id" ColumnName="Emp_post_id" />
+          <ScalarProperty Name="Emp_post_Add" ColumnName="Emp_post_Add" />
+          <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Alternate_Mob_No" ColumnName="Alternate_Mob_No" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SPR_NO" ColumnName="SPR_NO" />
+          <ScalarProperty Name="Emp_Category" ColumnName="Emp_Category" />
+          <ScalarProperty Name="Sub_category" ColumnName="Sub_category" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="UAN_No" ColumnName="UAN_No" />
+          <ScalarProperty Name="ESIC_No" ColumnName="ESIC_No" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Corres_Address" ColumnName="Corres_Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Physically_Challenged" ColumnName="Physically_Challenged" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="Exp_In_Yrs" ColumnName="Exp_In_Yrs" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Profile_Status" ColumnName="Profile_Status" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="Verified_By" ColumnName="Verified_By" />
+          <ScalarProperty Name="Verify_Date" ColumnName="Verify_Date" />
+          <ScalarProperty Name="Verify_Remark" ColumnName="Verify_Remark" />
+          <ScalarProperty Name="Identification_Id" ColumnName="Identification_Id" />
+          <ScalarProperty Name="Registration_Type" ColumnName="Registration_Type" />
+          <ScalarProperty Name="Doc_Count" ColumnName="Doc_Count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_REG_WISE_DOC_COUNT_FILTER" FunctionName="DB_HRMSModel1.Store.SP_REG_WISE_DOC_COUNT_FILTER">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.SP_REG_WISE_DOC_COUNT_FILTER_Result">
+          <ScalarProperty Name="DOB1" ColumnName="DOB1" />
+          <ScalarProperty Name="pk_Emp_id" ColumnName="pk_Emp_id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="fk_Mandal_id" ColumnName="fk_Mandal_id" />
+          <ScalarProperty Name="Mandal_Name" ColumnName="Mandal_Name" />
+          <ScalarProperty Name="fk_Dist_Id" ColumnName="fk_Dist_Id" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="fk_Pariyojana_ID" ColumnName="fk_Pariyojana_ID" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="fk_Designation_ID" ColumnName="fk_Designation_ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Emp_post_id" ColumnName="Emp_post_id" />
+          <ScalarProperty Name="Emp_post_Add" ColumnName="Emp_post_Add" />
+          <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Alternate_Mob_No" ColumnName="Alternate_Mob_No" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SPR_NO" ColumnName="SPR_NO" />
+          <ScalarProperty Name="Emp_Category" ColumnName="Emp_Category" />
+          <ScalarProperty Name="Sub_category" ColumnName="Sub_category" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="UAN_No" ColumnName="UAN_No" />
+          <ScalarProperty Name="ESIC_No" ColumnName="ESIC_No" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Corres_Address" ColumnName="Corres_Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Physically_Challenged" ColumnName="Physically_Challenged" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="Exp_In_Yrs" ColumnName="Exp_In_Yrs" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Profile_Status" ColumnName="Profile_Status" />
+          <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+          <ScalarProperty Name="Verified_By" ColumnName="Verified_By" />
+          <ScalarProperty Name="Verify_Date" ColumnName="Verify_Date" />
+          <ScalarProperty Name="Verify_Remark" ColumnName="Verify_Remark" />
+          <ScalarProperty Name="Identification_Id" ColumnName="Identification_Id" />
+          <ScalarProperty Name="Registration_Type" ColumnName="Registration_Type" />
+          <ScalarProperty Name="Doc_Count" ColumnName="Doc_Count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DIST_PARIYOJANA_REG_DOC_COUNT" FunctionName="DB_HRMSModel1.Store.SP_DIST_PARIYOJANA_REG_DOC_COUNT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_HRMSModel1.SP_DIST_PARIYOJANA_REG_DOC_COUNT_Result">
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="Pariyojana" ColumnName="Pariyojana" />
+          <ScalarProperty Name="reg_count" ColumnName="reg_count" />
+          <ScalarProperty Name="doc_count" ColumnName="doc_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

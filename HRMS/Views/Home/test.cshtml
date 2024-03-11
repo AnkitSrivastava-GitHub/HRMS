@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="row form-group" id="dv_srch">
+        <div class="col-md-2">
+            <b> Category:</b>
+        </div>
+        <div class="col-md-4">
+            <select id="ddl_category" class="form-control" >
+                <option value="NEW">NEW</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="button" id="btn_search" class="btn btn-danger" value="Search" />
+        </div>
+        
+    </div>
+
+
+    <div class="row form-group" id="dv_dtl" style="display:none">
+        <div class="col-md-12">
+            <label id="lbl_category"></label>
+
+        </div>
+        <div class="col-md-12">
+            
+        </div>
+    </div>  
+    <script>
+
+        $('#btn_search').click(function () {
+            let cat_id = $('#ddl_category').val();
+
+            $('#lbl_category').text(cat_id);
+            $('#dv_srch').hide();
+            $('#dv_dtl').show();
+
+        });
+    </script>
+</body>
+</html>

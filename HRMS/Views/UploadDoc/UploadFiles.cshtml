@@ -1,0 +1,634 @@
+﻿@model HRMS.Models.FileModel
+
+@{
+    //ViewBag.Title = "Upload Files";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<h2>UploadFiles</h2>
+
+<div class="form-group">
+    <div class="col-md-12">
+        <h1 style="color:black">Important Instructions :</h1>
+
+        <p>CANDIDATES MUST UPLOAD THE DOCUMENTS/CERTIFICATES IN SUPPORT OF ALL THE CLAIMS MADE BY THEM IN THE APPLICATION LIKE, DATE OF BIRTH, EXPERIENCE (PREFERABLY IN PRESCRIBED FORMAT), DESIRABLE QUALIFICATION(S) ETC. OR ANY OTHER INFORMATION, SEPARATELY AGAINST EACH CLAIM IN <b>PDF</b> FILE IN SUCH A WAY THAT THE FILE SIZE DOES NOT EXCEED <b>1 MB</b> FOR THE RESPECTIVE AFORESAID MODULES AND<b> 4 MB </b>FOR THE<b> “UPLOAD OTHER DOCUMENT”</b> MODULE AND IS LEGIBLE WHEN A PRINTOUT TAKEN. FOR THAT PURPOSE, THE APPLICANT MAY SCAN THE DOCUMENTS/CERTIFICATES IN 200 DPI GREY SCALE. DOCUMENTS LIKE AFFIDAVIT, RESUME, APPOINTMENT LETTER, EXPERIENCE CERTIFICATE ETC. MUST  BE UPLOADED IN READABLE FORMAT.</p>
+        <hr style=" border-top: 1px dotted black;" />
+    </div>
+
+
+</div>
+
+@using (Html.BeginForm("UploadFiles", "UploadDoc", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="form-group">
+
+                <label class="control-label col-md-4">Curriculum Vitae/Bio data:<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @name = "test", @onchange = " Filevalidation1();", @ID = "files1", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">All educational qualification certificates :<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation2();", @ID = "files2", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(4MB).</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Experience certificates:<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation3();", @ID = "files3", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Character Certificate <br />(Not more than six month old) :<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation4();", @ID = "files4", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Work Satisfactory Certificate <br />issued by the concerned officer :<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation5();", @ID = "files5", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Cast certificate <br />(If in reserved category):<span style="color:blue"><b>(Optional)</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation6();", @ID = "files6", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Personal Identification <br />(Aadhar Card):<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation7();", @ID = "files7", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4">PAN Card:<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation8();", @ID = "files8", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Bank Account passbook <br />(Bank name,IFSC code,Account No etc.):<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation9();", @ID = "files9", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Computer Diploma certificate <br />(if required in post):<span style="color:blue"><b>(Optional)</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation10();", @ID = "files10", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Employment Exchange registration certificate <br />(X-10 copy):<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation11();", @ID = "files11", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Notarized original Affidavit <br />(On Rs. 100/- stamp paper) (As per sample):<span style="color:red"><b>*</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation12();", @ID = "files12", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Old appointment letter<br />(At time of joining):<span style="color:blue"><b>(Optional)</b></span></label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.files, "", new { @onchange = " Filevalidation13();", @ID = "files13", @type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                    <span style="color:red"><b>*</b>only in PDF format(1MB).</span>
+                </div>
+            </div>
+
+        </div>
+        <hr style=" border-top: 1px dotted black;" />
+        <h1 style="color:red">Disclaimer*</h1>
+        <p>CANDIDATES WHO ARE APPLYING FOR RENEWAL WILL BE CALLED FOR DOCUMENTS VERIFICATION ONLY ON THE BASIS OF THE INFORMATION PROVIDED BY THEM IN THEIR ONLINE APPLICATIONS DOCUMENTS SUBMITTED IN SUPPORT OF THE CLAIM MADE IN THE ONLINE APPLICATION WILL BE EXAMINED ONLY IF THE CANDIDATE IS PRIMA FACIE ELIGIBLE TO BE SHORTLISTED ON THE BASIS OF INFORMATION REGARDING QUALIFICATIONS AND EXPERIENCE CLAIMED IN THE ONLINE APPLICATION, VARIOUS REPORTS AS PER THE ORDER AND CRITERIA DIRECTED BY THE DEPARTMENT FOR SHORTLISTING. CANDIDATES MUST ENSURE THAT ALL INFORMATION PROVIDED IS TRUE, ACCURATE AND RELEVENT. IF AT ANY SUBSEQUENT STAGE OR AT THE TIME OF VERFICATION OR RECURITMENT PROCESS ANY INOFRMATION GIVEN BY THEM OR ANY CLAIM MADE BY THEM IN THEIR ONLINE, APPLICATIONS AND DOCUMETNS IS FOUND TO BE FALSE, THEIR CANDIDATURE WILL BE LIABLE TO BE REJECTED. </p>
+
+        <div class="form-group" id="divsubmit">
+            <div class="col-md-offset-4 col-md-10">
+                <input type="submit" value="Submit Documents" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group" id="divshow">
+            <div class="col-md-offset-4 col-md-10">
+                <input type="button" value="Confirm" id="btnshow" class="btn btn-danger" />
+            </div>
+        </div>
+    </div>
+
+    <hidden id="hdnalert" value="@ViewBag.alert"></hidden>
+
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).on('invalid-form.validate', 'form', function () {
+            var button = $(this).find(':submit');
+            setTimeout(function () {
+                button.removeAttr('disabled');
+            }, 1);
+        });
+        $(document).on('submit', 'form', function () {
+            var button = $(this).find(':submit');
+            setTimeout(function () {
+                button.attr('disabled', 'disabled');
+            }, 0);
+        });
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            console.log("ready!");
+            $("#divsubmit").hide();
+
+            if ($("#hdnalert").val() != "") { alert("Slip can be downloaded only when documents will be uploaded !") };
+
+        });
+
+
+
+
+        $('#btnshow').click(function () {
+            if ($("#files1").val().trim().length == 0) { alert("Please Upload Curriculum Vitae/Bio data!"); $("#files1").focus(); return false; }
+            if ($("#files2").val().trim().length == 0) { alert("Please Upload educational qualification certificates !"); $("#files2").focus(); return false; }
+            if ($("#files3").val().trim().length == 0) { alert("Please Upload Experience certificates !"); $("#files3").focus(); return false; }
+            if ($("#files4").val().trim().length == 0) { alert("Please Upload Character Certificate !"); $("#files4").focus(); return false; }
+            if ($("#files5").val().trim().length == 0) { alert("Please Upload Work Satisfactory Certificate !"); $("#files5").focus(); return false; }
+            //if ($("#files6").val().trim().length == 0) { alert("Please Upload Cast certificate !"); $("#files6").focus(); return false; }
+            if ($("#files7").val().trim().length == 0) { alert("Please Upload Personal Identification(Aadhar Card)!"); $("#files7").focus(); return false; }
+            if ($("#files8").val().trim().length == 0) { alert("Please Upload PAN Card !"); $("#files8").focus(); return false; }
+            if ($("#files9").val().trim().length == 0) { alert("Please Upload Bank Account passbook!"); $("#files9").focus(); return false; }
+            //if ($("#files10").val().trim().length == 0) { alert("Please Upload Computer Diploma certificate !"); $("#files10").focus(); return false; }
+            if ($("#files11").val().trim().length == 0) { alert("Please Upload Employment Exchange registration certificate !"); $("#files11").focus(); return false; }
+            if ($("#files12").val().trim().length == 0) { alert("Please Upload Notarized original Affidavit !"); $("#files12").focus(); return false; }
+            //if ($("#files1").val().trim().length == 0) { alert("Please fill PAN NO!"); $("#files1").focus(); return false; }
+            //if (confirm("Are you sure?") == true) {
+            $("#divsubmit").show();
+            $("#divshow").hide();
+            //}
+            //        $("#divsubmit").show();
+
+            //$("#divshow").hide();
+        });
+    </script>
+}
+
+@section scripts {
+   
+
+    <script type="text/javascript">
+
+
+
+        Filevalidation1 = () => {
+            //var filePath = fileInput1.value;
+            const fi = document.getElementById('files1');
+            // Allowing file type
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+
+            //const fi = document.getElementById('files1');
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB !");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+
+        Filevalidation2 = () => {
+            const fi = document.getElementById('files2');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 4096) {
+                        alert(
+                            "File too Big, please select a file less than 4MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+
+        Filevalidation3 = () => {
+            const fi = document.getElementById('files3');
+
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+
+        Filevalidation4 = () => {
+            const fi = document.getElementById('files4');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+
+        Filevalidation5 = () => {
+            const fi = document.getElementById('files5');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+
+        }
+
+        Filevalidation6 = () => {
+            const fi = document.getElementById('files6');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation7 = () => {
+            const fi = document.getElementById('files7');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation8 = () => {
+            const fi = document.getElementById('files8');
+
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation9 = () => {
+            const fi = document.getElementById('files9');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation10 = () => {
+            const fi = document.getElementById('files10');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation11 = () => {
+            const fi = document.getElementById('files11');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation12 = () => {
+            const fi = document.getElementById('files12');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+
+        Filevalidation13 = () => {
+            const fi = document.getElementById('files13');
+
+            var allowedExtensions =
+                /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fi.value)) {
+                alert('Invalid file type');
+                fi.value = '';
+                return false;
+            }
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 1000) {
+                        alert(
+                            "File too Big, please select a file less than 1MB!");
+                        fi.value = '';
+                    }
+                }
+            }
+        }
+    </script>
+
+}
+
+

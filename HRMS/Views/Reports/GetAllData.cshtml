@@ -1,0 +1,271 @@
+﻿
+@{
+    ViewBag.Title = "HRMS REPORTS";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HRMS REPORTS</title>
+    <link href="~/Scripts/StyleSheet1.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <style>
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+            .sticky + .content {
+                padding-top: 102px;
+            }
+
+        .dt-button.red {
+            color: red;
+            margin-bottom: 20px
+        }
+
+        .dt-button.orange {
+            color: orange;
+        }
+
+        .dt-button.green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="content"><b>HRMS REPORTS <br /><span style="color:skyblue">ALL EMPLOYEE LIST</span></b></h2>
+        <div>
+            <h4><b><i class="fa fa-arrow-circle-left" style="font-size:24px;color:dodgerblue;"></i> &nbsp;@Html.ActionLink("REPORT PANEL", "ReportPanel", "Reports")</b></h4>
+        </div>
+       
+        <br />
+
+        <div class="tbl" id="tbl">
+            <div class="table-responsive">
+                <table id="tableData" class="table table-bordered fl-table">
+                    <thead>
+                        <tr class="info">
+                            <th>SR.No</th>
+                            <th>REGISTRATION NO</th>
+                            <th>MANDAL NAME</th>
+                            <th>DISTRICT NAME</th>
+                            <th>PARIYOJANA NAME</th>
+                            <th>DESIGNATION NAME</th>
+                            <th>SALARY</th>
+                            <th>EMPLOYEE NAME</th>
+                            <th>FATHER NAME</th>
+                            <th>DOB</th>
+                            <th>MOBILE NO</th>
+                            <th>AADHAR NO</th>
+                            <th>GENDER</th>
+                            <th>PAN NO</th>
+                            <th>EMAIL ID</th>
+                            <th>REGISTRATION TYPE</th>
+                            <th>DOCUMENT UPLOAD STATUS</th>
+                            <th>VERIFY STATUS</th>
+                            <th>DELETE</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @section scripts{
+
+        <!--CDN'S FOR FONT STYLE -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+        <!--CDN'S FOR DATA TABLE -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
+        <!--CDN'S TO USE COLUMN VISIBILITY AND PRINT BUTTON -->
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
+        <!---------------SCRIPT TO USE JQUERY DATATABLE----------------------------->
+        <script>
+            $(document).ready(function () {
+                var i = 1;
+                var d = new Date();
+                d + '';
+                $("#tableData").DataTable(
+                    {
+                        "ajax": {
+                            "url": "/Reports/GetEmpList",
+                            "type": "GET",
+                            "dataType": "json",
+                        },
+                        responsive: true,
+                        bLengthChange: true,
+                        //lengthMenu: [[10, 20, -1], [10, 20, "All"]],
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            ['10 rows', '25 rows', '50 rows', 'Show all']
+                        ],
+                        bFilter: true,
+                        bSort: true,
+                        bPaginate: true,
+                        "searching":true,
+                        "columns": [
+                            {
+                                "render": function (data, type,row,full, meta) {
+                                    return '<h5 style="color:#000;">'+'<b>'+(i++)+'</b>'+'</h5>';
+                                }
+                            },
+                            {
+                                "data": "Emp_Code",
+                                "render": function (data, type,row, full, meta) {
+                                    var tempdata = "";
+                                    if (row['Doc_Count'] > 0)
+                                    {
+                                        //var a = ParseInt(row['pk_Emp_id']);
+                                        tempdata = '<a style="color:green;" target="_blank" href="/UploadDoc/Download_slip?pk_id=' + row['pk_Emp_id'] + '">' + '<h5>' + data + '</h5>'+'</a>'; //'<b style="color:blue;">' + data + '</b>';
+                                    }
+                                    else
+                                    {
+                                        tempdata = '<h5 style="color:blue;">' + data +'</h5>';
+                                    }
+                                    return tempdata;
+                                }
+
+                            },
+                            { "data": "Mandal_Name" },
+                            { "data": "District_Name" },
+                            {
+                                "data": "Pariyojana"
+                                , "render": function (data, type, full, row, meta) {
+                                    var nme = "";
+                                    if (data != null)
+                                    {
+                                        nme = data.substring(3, (data.length));
+                                    }
+                                    else
+                                    {
+                                        nme = '<b style="color:red;">'+"No Data"+'</b>';
+                                    }
+                                    return nme;
+                                }
+                            },
+                            { "data": "Designation" },
+                            { "data": "Salary" },
+                            { "data": "Emp_Name" },
+                            { "data": "F_Name" },
+                            { "data": "DOB1"},
+                            { "data": "Mobile_No" },
+                            { "data": "Aadhar_No" },
+                            { "data": "Gender" },
+                            { "data": "PAN_NO" },
+                            { "data": "Email_id" },
+                            { "data": "Registration_Type" },
+                            {
+                                "data": "Doc_Count",
+                                "render": function (data, type, row, full, meta) {
+                                    var tempdata = "";
+                                    if (row['Doc_Count'] > 0) {
+                                        //var a = ParseInt(row['pk_Emp_id']);
+                                        tempdata = '<b style="color:green;">' + data + '<span style="padding:5px;color:green;">DOCS UPLOADED.</span>' + '</b>';
+                                    }
+                                    else {
+                                        tempdata = '<b><span>NO DOCS AVAILABLE.</span></b>';
+                                    }
+                                    return tempdata;
+                                }
+
+                            },
+                            {
+                                "data": "Verify_Status",
+                                "render": function (data, type, row,meta) {
+                                    var temp = "";
+                                    if (data == '1')
+                                    {
+                                        temp = '<b style="color:green;">' + "VERIFIED" + '<i class="fa fa-check" style="font-size:20px;color:green;padding:5px;" aria-hidden="true"></i>' +'</b>';
+                                    }
+                                    else
+                                    {
+                                        temp = '<b style="color:red;">' + "NOT VERIFIED" + '<i class="fa fa-close" style="font-size:20px;color:red;padding:5px;"></i>'+'</b>';
+                                    }
+                                    return temp;
+                                }
+                            },
+                             {
+                                "data": null,
+                                 "render": function (data, type, full, meta) {
+                                     debugger;
+                                     return "<a class='btn btn-danger' onclick=\'DeleteRow(" + full['pk_Emp_id'] + ")\'><i class='glyphicon glyphicon-trash'></i></a>";
+                                }
+                            }
+                        ],
+                        dom: 'Bfrtip',
+                        //dom: 'Blfrtip',
+                        buttons: [
+
+                            {
+                                extend: 'pageLength',
+                                className: 'green'
+                            },
+
+                            {
+                                extend: 'excelHtml5',
+                                text: 'Download Excel',
+                                className: 'red',
+                                filename: 'District_Wise_Count_' + d.toDateString(),//we can use it as  title: 'District_Wise_Count_' + d.toDateString()
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            'colvis'
+                        ]
+                    });
+
+            });
+ //<!-----------------END OF DATATABLE SCRIPT--------------------------------------->
+
+
+ //<!-----------------FUNCTION TO DELETE A ROW---------------------------------------------------->
+
+
+               function DeleteRow(pk_Emp_id) {
+                   if (confirm("Are You sure to delete this record..?")) {
+                       $.ajax({
+                          type: 'POST',
+                          url: '@Url.Action("Delete", "Reports")',
+                           data: { pk_Emp_id: pk_Emp_id },
+                          datatype: 'json',
+                          success: function (response) {
+                              // do something with response
+                              alert("User Deleted successfully !")
+                              window.location.reload();
+                          },
+                          error: function (msg) {
+                              alert(msg.responseText);
+                          }
+                      });
+                   }
+                }
+
+        </script>
+    }
+
+</body>
+
+</html>
+

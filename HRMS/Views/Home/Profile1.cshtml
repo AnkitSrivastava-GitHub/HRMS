@@ -1,0 +1,441 @@
+﻿@model HRMS.Models.Profile
+
+
+@{
+    Layout = null;
+}
+
+
+@{
+    var data = ViewBag.Profile;
+}
+
+
+<!DOCTYPE html>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<!-- Bootstrap CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        /* After Form Submit Dialog (I want this dialog to open after I submit form and the page
+           reloads then this should popup) */
+        $('#finalSavedDialog').dialog({
+            autoOpen: false,
+            width: 400,
+            modal: true,
+            resizable: false,
+            buttons: {
+                "OK": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    });
+</script>
+<style>
+    body {
+        background: #67B26F; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 0;
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        color: #000;
+    }
+
+    .student-profile .card {
+        border-radius: 10px;
+    }
+
+        .student-profile .card .card-header .profile_img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin: 10px auto;
+            border: 10px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .student-profile .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .student-profile .card p {
+            font-size: 16px;
+            color: #000;
+        }
+
+    .student-profile .table th,
+    .student-profile .table td {
+        font-size: 14px;
+        padding: 5px 10px;
+        color: #000;
+    }
+
+    .btn1 {
+        background-color: white;
+        color: blue;
+        width: 280px;
+    }
+
+    .btn2 {
+        background-color: white;
+        color: green;
+        width: 280px;
+    }
+
+    .btn3 {
+        background-color: white;
+        color: #dc3545;
+        width: 280px;
+    }
+
+    ol a:hover {
+        color: RED;
+        text-decoration: none;
+    }
+
+    .awesome {
+        font-family: futura;
+        font-style: italic;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: #313131;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        -webkit-animation: colorchange 20s infinite alternate;
+    }
+
+    @@-webkit-keyframes colorchange {
+        0% {
+            color: blue;
+        }
+
+        10% {
+            color: #8e44ad;
+        }
+
+        20% {
+            color: #1abc9c;
+        }
+
+        30% {
+            color: #d35400;
+        }
+
+        40% {
+            color: blue;
+        }
+
+        50% {
+            color: #34495e;
+        }
+
+        60% {
+            color: blue;
+        }
+
+        70% {
+            color: #2980b9;
+        }
+
+        80% {
+            color: #f1c40f;
+        }
+
+        90% {
+            color: #2980b9;
+        }
+
+        100% {
+            color: pink;
+        }
+    }
+</style>
+<body>
+    <div class="student-profile py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent text-center">
+                            <img class="profile_img" style="height:100px;width:100px" src="~/Images/dummy.jpg" alt="student dp">
+                            <h3>@data.Emp_Name</h3>
+                            <label style="color:blue">@data.Designation</label>
+                        </div>
+                      
+                        <div class="card-body">
+                            <p class="mb-0"><strong class="pr-1">Employee ID:</strong>@data.Emp_Code</p>
+                            <p class="mb-0"><strong class="pr-1">Mandal:</strong>@data.Mandal</p>
+                            <p class="mb-0"><strong class="pr-1">District :</strong>@data.District</p>
+
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm" style="margin-top:20px">
+                        <div class="card-header bg-transparent text-center">
+
+
+
+                        </div>
+
+                        <div class="card-body">
+
+
+                            @using (Html.BeginForm("UploadFiles", "UploadDoc", FormMethod.Get, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group">
+                                    @{
+                                        int a = data.pk_Emp_id;
+                                    }
+
+                                    <input type="hidden" value="@a" name="pk_id" />
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Upload Documents" class="btn1 btn-primary" />
+                                    </div>
+                                </div>
+                            }
+                            <hr />
+
+
+                            @using (Html.BeginForm("Download_slip", "UploadDoc", FormMethod.Get, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group">
+                                    @{
+                                        int a = data.pk_Emp_id;
+                                    }
+
+                                    <input type="hidden" value="@a" name="pk_id" />
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Download Slip" class="btn2 btn-success" />
+                                    </div>
+                                </div>
+                            }
+
+                            <hr />
+                            @using (Html.BeginForm("Login", "Login", FormMethod.Get, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Log Out" class="btn3 btn-danger" />
+                                    </div>
+                                </div>
+                            }
+
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm" style="margin-top:20px">
+
+                        <div class="card-header bg-transparent text-center">
+                            <div style="height:30px;width:30px">
+
+                                <span style="margin-left:-30px;margin-top:-10px" class="awesome">NOTICE :</span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+
+                            <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="3" width="100%" direction="up" height="30%" style="color:blue">
+
+                                <ol>
+
+                                    @foreach (var item in ViewBag.Notice)
+                                    {
+                                        if (Convert.ToInt32(item.Fk_Emp_id) == 0 && Convert.ToInt32(item.Fk_Mandal_id) == 0 && item.Is_Active==true)
+                                        {
+                                            <li>  <a href="@item.Notice_Path">@item.Notice_Name </a> </li>
+                                            <br />
+                                        }
+                                        if (Convert.ToInt32(item.Fk_Emp_id) == Convert.ToInt32(data.pk_Emp_id) && Convert.ToInt32(item.Fk_Mandal_id) == 0 && item.Is_Active == true)
+                                        {
+                                            <li>  <a href="@item.Notice_Path">@item.Notice_Name </a> </li>
+                                            <br />
+                                        }
+                                        if (Convert.ToInt32(item.Fk_Emp_id) == 0 && Convert.ToInt32(item.Fk_Mandal_id) == Convert.ToInt32(data.fk_Mandal_id) && item.Is_Active ==true)
+                                        {
+                                            <li>  <a href="@item.Notice_Path">@item.Notice_Name </a> </li>
+                                            <br />
+                                        }
+                                       
+                                    }
+
+                                </ol>
+
+                            </marquee>
+                            <p1></p1>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                        </div>
+                        <div class="card-body pt-0">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="30%">Pariyojana</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Pariyojana</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Father Name</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.F_Name</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Mobile NO</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Mobile_No</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">DOB</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.DOB1 </td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Address </th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Address</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Aadhar No</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Aadhar_No</td>
+                                </tr>
+
+                                <tr>
+                                    <th width="30%">Gender</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Gender</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">PAN No	</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.PAN_NO</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Email ID</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Email_id</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">SPR No</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.SPR_NO</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Employee Category</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Emp_Category</td>
+                                </tr>
+
+                                <tr>
+                                    <th width="30%">Category</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Sub_category</td>
+                                </tr>
+
+                                <tr>
+                                    <th width="30%">Physically_Challenged?</th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Physically_Challenged</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Experience </th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Exp_In_Yrs<span>&nbsp;YEARS&nbsp;</span></td>
+                                </tr>
+
+                                <tr>
+                                    <th width="30%">Salary </th>
+                                    <td width="2%">:</td>
+                                    <td>@data.Salary <span>&nbsp;Rs.&nbsp;</span></td>
+                                </tr>
+
+
+
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <div style="height: 26px"></div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Important information</h3>
+                        </div>
+                        <div class="card-body pt-0">
+                            <p>
+                                <b><span style="color:red">Dear Candidate, your registration was successful, please be ready with the following documents which you will need to upload for profile verification.</span></b><br />
+                                1.	Curriculum Vitae / Bio data<br />
+                                2.	Attested copy of all types of educational qualification certificates.<br />
+                                3.	Attested copy of experience certificates.<br />
+                                4.	Character Certificate not more than six month old.<br />
+                                5.	Work Satisfactory Certificate issued by the concerned officer.<br />
+                                6.	If in reserved category then cast certificate.<br />
+                                7.	Attested copy of personal identification (Adhar Card).<br />
+                                8.	Attested copy of PAN Card.<br />
+                                9.	Photocopy of Bank Account passbook (Bank name, Branch IFSC code, Account No.)<br />
+                                10.	Four Passport size recent color photographs.<br />
+                                11.	 Photocopy of Computer Diploma certificate if required in post.<br />
+                                12.	 Photocopy of Employment Exchange registration certificate (X-10 copy).<br />
+                                13.	 Notarized original Affidavit on Rs. 100/- stamp paper. <a href="~/Files/Affidavit.pdf">Download Sample</a><br />
+                                14.  Old appointment letter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    @if (TempData["Message"] != null && TempData["Message"].ToString() == "Success" )
+    {
+        <script type="text/javascript">
+            $(function () {
+                $('#finalSavedDialog').dialog('open');
+                
+            });
+        </script>
+    }
+
+
+    <div id="finalSavedDialog" title="Success">
+        <h2> Data Saved succefully! Your LoginID id <b> @data.Emp_Code </b> and Your Password is <b>  @data.Password </b>. </h2>
+    </div>
+    <script>
+        $(function () {
+            $('marquee').mouseover(function () {
+                $(this).attr('scrollamount', 0);
+            }).mouseout(function () {
+                $(this).attr('scrollamount', 5);
+            });
+        });
+    </script>
+</body>

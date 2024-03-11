@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_HRMSModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tbl_Emp_Credential">
+    <Key>
+      <PropertyRef Name="Pk_ID" />
+    </Key>
+    <Property Name="Pk_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fk_Emp_Id" Type="Int32" />
+    <Property Name="Emp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Mail_Id" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OldPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginCount" Type="Int32" />
+    <Property Name="Is_OTP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Active" Type="Boolean" />
+    <Property Name="Created_Date" Type="DateTime" Precision="3" />
+    <Property Name="Verify_Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Designation">
+    <Key>
+      <PropertyRef Name="pk_Designation_id" />
+    </Key>
+    <Property Name="pk_Designation_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fk_Pariyojana_Id" Type="Int32" />
+    <Property Name="Pariyojana_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_District">
+    <Key>
+      <PropertyRef Name="pk_Dis_ID" />
+    </Key>
+    <Property Name="pk_Dis_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="District_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Mandal_id" Type="Int32" />
+    <Property Name="DistrictCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Field_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Mandal">
+    <Key>
+      <PropertyRef Name="pk_id" />
+    </Key>
+    <Property Name="pk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mandal_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mandal_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Feild_1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Pariyojana">
+    <Key>
+      <PropertyRef Name="pk__Pariyojana_Id" />
+    </Key>
+    <Property Name="pk__Pariyojana_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pariyojana_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Pariyojana" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_Master_Yojana_Designation_Salary">
+    <Key>
+      <PropertyRef Name="pk__des_id" />
+    </Key>
+    <Property Name="pk__des_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mandal_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Mandal_id" Type="Int32" />
+    <Property Name="District_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fk_District_id" Type="Int32" />
+    <Property Name="fk_Pariyojana_Id" Type="Int32" />
+    <Property Name="Pariyojana_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Pariyojana_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Designation_Id" Type="Int32" />
+    <Property Name="Designations_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Designations_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_Notice">
+    <Key>
+      <PropertyRef Name="PK_Notice_ID" />
+    </Key>
+    <Property Name="PK_Notice_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Notice_Path" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Notice_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Active" Type="Boolean" />
+    <Property Name="Notice_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fk_Emp_id" Type="Int64" />
+    <Property Name="Fk_Mandal_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_UserDetail">
+    <Key>
+      <PropertyRef Name="Pk_Login_Id" />
+    </Key>
+    <Property Name="Pk_Login_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="DB_HRMSEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_Emp_Credential" EntityType="Self.Tbl_Emp_Credential" />
+    <EntitySet Name="Tbl_Master_Designation" EntityType="Self.Tbl_Master_Designation" />
+    <EntitySet Name="Tbl_Master_District" EntityType="Self.Tbl_Master_District" />
+    <EntitySet Name="Tbl_Master_Mandal" EntityType="Self.Tbl_Master_Mandal" />
+    <EntitySet Name="Tbl_Master_Pariyojana" EntityType="Self.Tbl_Master_Pariyojana" />
+    <EntitySet Name="Tbl_Master_Yojana_Designation_Salary" EntityType="Self.Tbl_Master_Yojana_Designation_Salary" />
+    <EntitySet Name="Tbl_Notice" EntityType="Self.Tbl_Notice" />
+    <EntitySet Name="tbl_UserDetail" EntityType="Self.tbl_UserDetail" />
+    <FunctionImport Name="Emp_Login" ReturnType="Collection(DB_HRMSModel1.Emp_Login_Result)">
+      <Parameter Name="Emp_Code" Mode="In" Type="String" />
+      <Parameter Name="Emp_Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_Employee_Docs" EntityType="DB_HRMSModel1.tbl_Employee_Docs" />
+    <EntitySet Name="tbl_Employee_Registration" EntityType="DB_HRMSModel1.tbl_Employee_Registration" />
+    <FunctionImport Name="Proc_Notice">
+      <Parameter Name="path" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="Notice_Type" Mode="In" Type="String" />
+      <Parameter Name="Fk_MAndal_id" Mode="In" Type="String" />
+      <Parameter Name="Fk_Emp_id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Emp_Reg" ReturnType="Collection(DB_HRMSModel1.Sp_Emp_Reg_Result)">
+      <Parameter Name="fk_Mandal_id" Mode="In" Type="Int32" />
+      <Parameter Name="Mandal_Name" Mode="In" Type="String" />
+      <Parameter Name="fk_Dist_Id" Mode="In" Type="Int32" />
+      <Parameter Name="District_Name" Mode="In" Type="String" />
+      <Parameter Name="pk_Designation_ID" Mode="In" Type="Int32" />
+      <Parameter Name="pk_Pariyojana_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Salary" Mode="In" Type="String" />
+      <Parameter Name="Emp_post_Add" Mode="In" Type="String" />
+      <Parameter Name="Postal_Code" Mode="In" Type="String" />
+      <Parameter Name="Emp_Name" Mode="In" Type="String" />
+      <Parameter Name="F_Name" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Mobile_No" Mode="In" Type="String" />
+      <Parameter Name="Alternate_Mob_No" Mode="In" Type="String" />
+      <Parameter Name="Aadhar_No" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="PAN_NO" Mode="In" Type="String" />
+      <Parameter Name="Email_id" Mode="In" Type="String" />
+      <Parameter Name="SPR_NO" Mode="In" Type="String" />
+      <Parameter Name="Emp_Category" Mode="In" Type="String" />
+      <Parameter Name="Sub_category" Mode="In" Type="String" />
+      <Parameter Name="Bank_Name" Mode="In" Type="String" />
+      <Parameter Name="Account_No" Mode="In" Type="String" />
+      <Parameter Name="IFSC_Code" Mode="In" Type="String" />
+      <Parameter Name="Branch_Name" Mode="In" Type="String" />
+      <Parameter Name="UAN_No" Mode="In" Type="String" />
+      <Parameter Name="ESIC_No" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="Corres_Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Physically_Challenged" Mode="In" Type="String" />
+      <Parameter Name="Territory" Mode="In" Type="String" />
+      <Parameter Name="Exp_In_Yrs" Mode="In" Type="Int32" />
+      <Parameter Name="Created_date" Mode="In" Type="DateTime" />
+      <Parameter Name="Identification_Id" Mode="In" Type="String" />
+      <Parameter Name="Registration_Type" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_Master_Salary" EntityType="DB_HRMSModel1.tbl_Master_Salary" />
+    <FunctionImport Name="Proc_DownloadSlip" ReturnType="Collection(DB_HRMSModel1.Proc_DownloadSlip_Result)">
+      <Parameter Name="pk_Emp_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_Verify_doc_Admin" ReturnType="Collection(Int32)">
+      <Parameter Name="Emp_code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_District_Pariyojana_RegType_Count_Report" ReturnType="Collection(DB_HRMSModel1.sp_District_Pariyojana_RegType_Count_Report_Result)" />
+    <FunctionImport Name="SP_REPORT_VERIFIED_COUNT" ReturnType="Collection(DB_HRMSModel1.SP_REPORT_VERIFIED_COUNT_Result)" />
+    <FunctionImport Name="SP_REG_WISE_DOC_COUNT" ReturnType="Collection(DB_HRMSModel1.SP_REG_WISE_DOC_COUNT_Result)" />
+    <FunctionImport Name="SP_REG_WISE_DOC_COUNT_FILTER" ReturnType="Collection(DB_HRMSModel1.SP_REG_WISE_DOC_COUNT_FILTER_Result)">
+      <Parameter Name="fk_Mandal_id" Mode="In" Type="Int32" />
+      <Parameter Name="fk_Dist_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DIST_PARIYOJANA_REG_DOC_COUNT" ReturnType="Collection(DB_HRMSModel1.SP_DIST_PARIYOJANA_REG_DOC_COUNT_Result)" />
+  </EntityContainer>
+  <ComplexType Name="Emp_Login_Result">
+    <Property Type="String" Name="msg" Nullable="false" MaxLength="36" />
+    <Property Type="Int32" Name="Pk_ID" Nullable="false" />
+    <Property Type="Int32" Name="Fk_Emp_Id" Nullable="true" />
+    <Property Type="String" Name="Emp_Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Emp_Mail_Id" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Emp_Id" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Emp_Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OldPassword" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="LoginCount" Nullable="true" />
+    <Property Type="String" Name="Is_OTP" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="Is_Active" Nullable="true" />
+    <Property Type="DateTime" Name="Created_Date" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Verify_Status" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tbl_Employee_Docs">
+    <Key>
+      <PropertyRef Name="pk_Doc_Id" />
+    </Key>
+    <Property Name="pk_Doc_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_Emp_Id" Type="Int32" />
+    <Property Name="Emp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Doc_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Doc_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Doc_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Doc_Sr_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Doc_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created_Date" Type="DateTime" Precision="3" />
+    <Property Name="created_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Active" Type="Boolean" />
+    <Property Name="Verify_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Verify_Date" Type="DateTime" Precision="3" />
+    <Property Name="Verify_Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="verified_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Verify_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Employee_Registration">
+    <Key>
+      <PropertyRef Name="pk_Emp_id" />
+    </Key>
+    <Property Name="pk_Emp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Mandal_id" Type="Int32" />
+    <Property Name="Mandal_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Dist_Id" Type="Int32" />
+    <Property Name="District_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Pariyojana_ID" Type="Int32" />
+    <Property Name="Pariyojana" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fk_Designation_ID" Type="Int32" />
+    <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_post_id" Type="Int32" />
+    <Property Name="Emp_post_Add" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Postal_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="F_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile_No" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Alternate_Mob_No" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Aadhar_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PAN_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email_id" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPR_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sub_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bank_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Account_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IFSC_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UAN_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESIC_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Corres_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Physically_Challenged" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Territory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Exp_In_Yrs" Type="Int32" />
+    <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Sign" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Active" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Created_date" Type="DateTime" Precision="3" />
+    <Property Name="Profile_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Verify_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Verified_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Verify_Date" Type="DateTime" Precision="3" />
+    <Property Name="Verify_Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Identification_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Registration_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="Sp_Emp_Reg_Result">
+    <Property Type="Int32" Name="pk_Emp_id" Nullable="false" />
+    <Property Type="String" Name="Emp_Code" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="fk_Mandal_id" Nullable="true" />
+    <Property Type="String" Name="Mandal_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Dist_Id" Nullable="true" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Pariyojana_ID" Nullable="true" />
+    <Property Type="String" Name="Pariyojana" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="fk_Designation_ID" Nullable="true" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Salary" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Emp_post_id" Nullable="true" />
+    <Property Type="String" Name="Emp_post_Add" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Postal_Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Emp_Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="F_Name" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Mobile_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Alternate_Mob_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Aadhar_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PAN_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email_id" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SPR_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Emp_Category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sub_category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Bank_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Account_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IFSC_Code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Branch_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UAN_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ESIC_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Corres_Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Physically_Challenged" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Territory" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Exp_In_Yrs" Nullable="true" />
+    <Property Type="String" Name="Photo" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sign" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Is_Active" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Created_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Profile_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Verify_Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Verified_By" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Verify_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Verify_Remark" Nullable="true" />
+    <Property Type="String" Name="Identification_Id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Registration_Type" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="tbl_Master_Salary">
+    <Key>
+      <PropertyRef Name="pk_Salary_id" />
+    </Key>
+    <Property Name="pk_Salary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Salary" Type="Int64" />
+    <Property Name="is_Active" Type="Boolean" />
+  </EntityType>
+  <ComplexType Name="Proc_DownloadSlip_Result">
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="pk_Emp_id" Nullable="false" />
+    <Property Type="String" Name="Emp_Code" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="fk_Mandal_id" Nullable="true" />
+    <Property Type="String" Name="Mandal_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Dist_Id" Nullable="true" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Pariyojana_ID" Nullable="true" />
+    <Property Type="String" Name="Pariyojana" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="fk_Designation_ID" Nullable="true" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Salary" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Emp_post_id" Nullable="true" />
+    <Property Type="String" Name="Emp_post_Add" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Postal_Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Emp_Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="F_Name" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Mobile_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Alternate_Mob_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Aadhar_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PAN_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email_id" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SPR_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Emp_Category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sub_category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Bank_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Account_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IFSC_Code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Branch_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UAN_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ESIC_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Corres_Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Physically_Challenged" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Territory" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Exp_In_Yrs" Nullable="true" />
+    <Property Type="String" Name="Photo" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sign" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Is_Active" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Created_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Profile_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Verify_Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Verified_By" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Verify_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Verify_Remark" Nullable="true" />
+    <Property Type="String" Name="Identification_Id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Registration_Type" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_District_Pariyojana_RegType_Count_Report_Result">
+    <Property Type="Int32" Name="fk_Dist_Id" Nullable="true" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Pariyojana_ID" Nullable="true" />
+    <Property Type="String" Name="Pariyojana_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Registration_Type" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="TOTAL_COUNT" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_REPORT_VERIFIED_COUNT_Result">
+    <Property Type="Int32" Name="fk_Dist_Id" Nullable="true" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Pariyojana_ID" Nullable="true" />
+    <Property Type="String" Name="Pariyojana_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Verify_Status" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="TOTAL_COUNT" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_REG_WISE_DOC_COUNT_Result">
+    <Property Type="String" Name="DOB1" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="pk_Emp_id" Nullable="false" />
+    <Property Type="String" Name="Emp_Code" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="fk_Mandal_id" Nullable="true" />
+    <Property Type="String" Name="Mandal_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Dist_Id" Nullable="true" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Pariyojana_ID" Nullable="true" />
+    <Property Type="String" Name="Pariyojana" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="fk_Designation_ID" Nullable="true" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Salary" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Emp_post_id" Nullable="true" />
+    <Property Type="String" Name="Emp_post_Add" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Postal_Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Emp_Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="F_Name" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Mobile_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Alternate_Mob_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Aadhar_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PAN_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email_id" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SPR_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Emp_Category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sub_category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Bank_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Account_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IFSC_Code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Branch_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UAN_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ESIC_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Corres_Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Physically_Challenged" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Territory" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Exp_In_Yrs" Nullable="true" />
+    <Property Type="String" Name="Photo" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sign" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Is_Active" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Created_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Profile_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Verify_Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Verified_By" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Verify_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Verify_Remark" Nullable="true" />
+    <Property Type="String" Name="Identification_Id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Registration_Type" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Doc_Count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_REG_WISE_DOC_COUNT_FILTER_Result">
+    <Property Type="String" Name="DOB1" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="pk_Emp_id" Nullable="false" />
+    <Property Type="String" Name="Emp_Code" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="fk_Mandal_id" Nullable="true" />
+    <Property Type="String" Name="Mandal_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Dist_Id" Nullable="true" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="fk_Pariyojana_ID" Nullable="true" />
+    <Property Type="String" Name="Pariyojana" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="fk_Designation_ID" Nullable="true" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Salary" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Emp_post_id" Nullable="true" />
+    <Property Type="String" Name="Emp_post_Add" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Postal_Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Emp_Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="F_Name" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="Mobile_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Alternate_Mob_No" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Aadhar_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PAN_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email_id" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SPR_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Emp_Category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sub_category" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Bank_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Account_No" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IFSC_Code" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Branch_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UAN_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ESIC_No" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Corres_Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Physically_Challenged" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Territory" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Exp_In_Yrs" Nullable="true" />
+    <Property Type="String" Name="Photo" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sign" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Is_Active" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Created_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Profile_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Verify_Status" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Verified_By" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Verify_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Verify_Remark" Nullable="true" />
+    <Property Type="String" Name="Identification_Id" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Registration_Type" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Doc_Count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DIST_PARIYOJANA_REG_DOC_COUNT_Result">
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Pariyojana" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="reg_count" Nullable="true" />
+    <Property Type="Int32" Name="doc_count" Nullable="true" />
+  </ComplexType>
+</Schema>

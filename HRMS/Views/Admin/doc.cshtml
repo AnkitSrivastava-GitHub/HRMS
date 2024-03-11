@@ -1,0 +1,107 @@
+﻿
+
+@{
+    ViewBag.Title = "doc";
+  
+}
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>_Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    @*<meta http-equiv="expires" content="0" />
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" />*@
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/assets/images/download.png" type="image/x-icon" />
+    <title>@ViewBag.Title  Krishi Nideshalaya Uttar Pradesh, Krishi Bhawan, Lucknow</title>
+    <!--MAIN JS FILE -->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <!--MAIN JS FILE -->
+    <!--Alertify -->
+    <script defer src="~/assets/js/alertify.min.js"></script>
+    <link href="~/assets/css/alertify.min.css" rel="stylesheet" />
+    <!--Alertify -->
+    <!-- PAGE LOADER -->
+    <script defer src="~/assets/js/jquery.blockUI.js"></script>
+    <!-- PAGE LOADER -->
+    <!-- MULTIPLE SELECT DROPDOWN -->
+    <link rel="stylesheet" href="~/assets/css/select2.min.css" />
+    <script defer src="~/assets/js/select2.min.js"></script>
+
+
+</head>
+<body>
+    <div class="col-lg-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+                <h4 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h4>
+            </div>
+            <div class="card-body pt-0">
+                <table id="basicdtl" class="table table-bordered"></table>
+            </div>
+        </div>
+        <div style="height: 26px"></div>
+        <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+                <h4 class="mb-0"><i class="far fa-clone pr-1"></i>DOCUMENTS</h4>
+            </div>
+            <table id="doc" class="table table-bordered"></table>
+        </div>
+
+        <div style="height: 26px"></div>
+        <div class="card shadow-sm">
+            <div class="row">
+                <div class="col-md-4">
+                    <label id="hdnid" hidden></label>
+                    <label id="hdnlbl" hidden></label>
+                </div>
+                <div class="col-md-8">
+                    <input type="checkbox" id="chkdoc" value="CHECK">
+                    <lable>Declaration : I hereby  declare that I have seen all the Documents</lable>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <input type="button" id="verify" value="VERIFY ALL" class="btn btn-gradient-danger" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/JS_CODE/Admin/verify.js"></script>
+
+<script src="~/assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="~/assets/vendors/chart.js/Chart.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="~/assets/js/off-canvas.js"></script>
+<script src="~/assets/js/hoverable-collapse.js"></script>
+<script src="~/assets/js/misc.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="~/assets/js/todolist.js"></script>
+<!-- End custom js for this page -->
+<!-- plugins:css -->
+<link rel="stylesheet" href="~/assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="~/assets/vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- Plugin css for this page -->
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<!-- endinject -->
+<!-- Layout styles -->
+<link rel="stylesheet" href="~/assets/css/style.css">
+<!-- End layout styles -->
+<link rel="shortcut icon" href="~/assets/images/favicon.ico" />

@@ -1,0 +1,207 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HRMS REPORTS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+            });
+        });
+    </script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .container {
+            margin-top: 100px;
+        }
+
+        .counter-box {
+            display: block;
+            background: #3acf87;
+            padding: 40px 20px 37px;
+            text-align: center
+        }
+
+            .counter-box.colored {
+                background: #3acf87;
+            }
+
+            .counter-box p {
+                margin: 5px 0 0;
+                padding: 0;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500
+            }
+
+            .counter-box i {
+                font-size: 60px;
+                margin: 0 0 15px;
+                color: #fff
+            }
+
+            .counter-box p {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        .lidiv{
+            min-height:100px;
+            background-color:aqua;
+        }
+
+        .counter {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 28px
+        }
+
+        .counter-box.colored {
+            background: #3acf87;
+        }
+
+            .counter-box.colored p,
+            .counter-box.colored i,
+            .counter-box.colored .counter {
+                color: #fff
+            }
+       
+        .btn1 {
+            background-color: white;
+            color: black;
+            border: 1px solid #117a8b;
+            
+        }
+
+        .btn2 {
+            background-color: white;
+            color: black;
+            border: 1px solid #117a8b;
+           
+        }
+
+        .btn3 {
+            background-color: white;
+            color: black;
+            border: 1px solid #117a8b;
+           
+        }
+        
+    </style>
+
+
+</head>
+<body>
+    <div class="container" style="height:1000px;">
+        <center style="margin-bottom:50px;background-color:#128181;">
+           
+                <h2 style="color:white"><b>HRMS REPORTS</b></h2>
+
+         
+        </center>
+        <div class="row">
+            <div class="four col-md-1">
+            </div>
+
+            <div class="four  col-md-2">
+                <div class="counter-box colored">
+                    <i class="fa fa-folder"></i>
+                    <span class="counter">@ViewBag.AllCount</span>
+                    <p>ALL FORM COUNT</p>
+                </div><br />
+            </div>
+            <div class="four col-md-2">
+                <div class="counter-box" style="background-color:#5c8abb">
+                    <i class="fa fa-folder"></i>
+                    <span class="counter">@ViewBag.AllOldCount</span>
+                    <p>OLD FORM COUNT</p>
+                </div><br />
+            </div>
+            <div class="four col-md-2">
+                <div class="counter-box" style="background-color:#343a40">
+                    <i class="fa fa-folder"></i>
+                    <span class="counter">@ViewBag.AllNewCount</span>
+                    <p>NEW FORM COUNT</p>
+                </div>
+                <br />
+            </div>
+            <div class="four col-md-2">
+                <div class="counter-box" style="background-color:#977615">
+                    <i class="fa fa-folder"></i>
+                    <span class="counter">@ViewBag.AllVerifiedCount</span>
+                    <p>VERIFIED FORMS</p>
+                </div>
+                <br />
+            </div>
+
+
+            <div class="four col-md-2 box1">
+                <div class="counter-box" style="background-color:#117a8b">
+                    <i class="fa fa-folder"></i>
+                    <span class="counter">@ViewBag.UploadedDocsCount</span>
+                    <p>DOCUMENT UPLOADED</p>
+
+                </div>
+                <br />
+            </div>
+
+            <div class="four col-md-1">
+            </div>
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="four col-md-1">
+            </div>
+
+            <div class="four col-md-10" style="border:5px solid #128181;width:900px">
+                <br />
+
+                <i class="fa fa-hand-o-right" style="font-size:24px;color:#3acf87;"></i> &nbsp;<a href="/Reports/GetAllData"><span type="button" class="btn-info btn btn3"><b>&nbsp;VEIW ALL EMPLOYEE DATA&nbsp;</b></span></a>
+                <hr style="color:#128181;" />
+
+                <i class="fa fa-hand-o-right" style="font-size:24px;color:#5c8abb;"></i>&nbsp;<a href="/Reports/District_Pariyojana_Verified_Count"><sapn type="button" class="btn-info btn btn3"><b>&nbsp;DISTRICT WISE PARIYOJANA WISE VERIFIED COUNT&nbsp;</b></sapn></a>
+                <hr style="color:#128181;" />
+
+                <i class="fa fa-hand-o-right" style="font-size:24px;color:#343a40;"></i>&nbsp;<a href="/Reports/District_Pariyojana_Count"><sapn type="button" class="btn-info btn btn3"><b>&nbsp;DISTRICT WISE PARIYOJANA WISE REGISTRATION TYPE COUNT&nbsp;</b></sapn></a>
+                <hr style="color:#128181;" />
+
+                <i class="fa fa-hand-o-right" style="font-size:24px;color:#117a8b;"></i>&nbsp;<a href="/Reports/Reg_Doc_Count"><span type="button" class="btn-info btn btn3"><b>&nbsp;EMPLOYEE WISE DOCUMENT COUNT&nbsp;</b></span></a>
+                <hr style="color:#128181;"/>
+
+                <i class="fa fa-hand-o-right" style="font-size:24px;color:#3acf87;"></i> &nbsp;<a href="/Reports/District_Pariyojana_RegCount_DocCount_View"><span type="button" class="btn-info btn btn3"><b>&nbsp;DISTRICT WISE PARIYOJANA WISE REGISTRATION COUNT DOC COUNT&nbsp;</b></span></a>
+                <hr style="color:#128181;" />
+               
+            </div>
+            <div class="four col-md-1">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

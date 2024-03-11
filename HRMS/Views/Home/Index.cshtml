@@ -1,0 +1,368 @@
+﻿@model HRMS.Models.Emp_All_Details
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/dcalendar.picker.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+
+        #deceased {
+            background-color: #FFF3F5;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .remove_field {
+            float: right;
+            cursor: pointer;
+            position: absolute;
+        }
+
+            .remove_field:hover {
+                text-decoration: none;
+            }
+
+        .disabled {
+        }
+    </style>
+</head>
+<body style="margin-top:50px">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="panel panel-primary" style="margin:20px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registration Form</h3>
+            </div>
+            <div class="panel-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="col-md-12 col-sm-12" id="deceased">
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="gender">Mandal <b><span style="color:red">*</span></b></label>
+                        @Html.TextBox("Mandal", @Session["Mandal"].ToString(), new { @class = "form-control input-sm", disabled = "true" })
+
+
+
+                        @Html.ValidationMessageFor(model => model.Mandal, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="DOB"> District <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBox("District", @Session["District"].ToString(), new { @class = "form-control input-sm", disabled = "true" })
+
+
+                        @Html.ValidationMessageFor(model => model.District, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="DOB"> Pariyojana <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBox("Pariyojana", @Session["Pariyojana"].ToString(), new { @class = "form-control input-sm", disabled = "true" })
+
+
+                        @Html.ValidationMessageFor(model => model.Pariyojana, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="DOB"> Designation <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBox("Designation", @Session["Designation"].ToString(), new { @class = "form-control input-sm", disabled = "true" })
+
+
+                        @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="DOB"> Salary <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBox("Salary", @Session["Salary_ID"].ToString(), new { @class = "form-control input-sm", disabled = "true" })
+
+
+                        @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="DOB"> Registration Type <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBox("RegistartionType", @Session["Reg_Type"].ToString(), new { @class = "form-control input-sm", disabled = "true" })
+
+
+                        @Html.ValidationMessageFor(model => model.RegistartionType, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 col-sm-12" id="deceased">
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="name">Employee Name<span style="color:red"><b>*</b></span>	</label>
+                        @Html.TextBoxFor(Model => Model.Emp_Name, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Emp_Name, "", new { @class = "text-danger" })
+
+
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="name">Father Name<span style="color:red"><b>*</b></span>	</label>
+                        @Html.TextBoxFor(Model => Model.F_Name, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.F_Name, "", new { @class = "text-danger" })
+
+
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="email">Pan No(e.g. ABCDE1234A) <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.PAN_NO, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.PAN_NO, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="email">DOB(MM/DD/YYYY) <span style="color:red"><b>*</b></span></label>
+                        @Html.EditorFor(Model => Model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+
+                        @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="email">Gender <span style="color:red"><b>*</b></span></label>
+
+                        @Html.DropDownListFor(Model => Model.Gender, new SelectList(ViewBag.Gender, "Text", "Text"), new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="email">Email id <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Email_id, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Email_id, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">Mobile Number <span style="color:red"><b>*</b></span> </label>
+                        @Html.TextBoxFor(Model => Model.Mobile_No, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Mobile_No, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">Alternate Mo.Number(Optional)</label>
+                        @Html.TextBoxFor(Model => Model.Alternate_Mob_No, new { @class = "form-control input-sm" })
+
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">Aadhar Number <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Aadhar_No, new { @class = "form-control input-sm" })
+
+
+                        @Html.ValidationMessageFor(model => model.Aadhar_No, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">SPR No(Sewayojan Portal Registration Number,if candidate not registered in sevayojan portal,please registered first then apply.) <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.SPR_NO, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.SPR_NO, "", new { @class = "text-danger" })
+
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">UAN Number<span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.UAN_No, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.UAN_No, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">ESIC Number <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.ESIC_No, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.ESIC_No, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="email">Category <span style="color:red"><b>*</b></span></label>
+                        @Html.DropDownListFor(Model => Model.Emp_Category, new SelectList(ViewBag.CategoryType, "Text", "Text"), "--Select Category--", new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Emp_Category, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile"> Sub Category </label>
+                        @Html.TextBoxFor(Model => Model.Sub_category, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Sub_category, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="address">Permanent Address<span style="color:red"><b>*</b></span></label>
+                        @Html.TextAreaFor(Model => Model.Address, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="address">Correspondence/Contact Address<span style="color:red"><b>*</b></span></label>
+                        @Html.TextAreaFor(Model => Model.Corres_Address, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Corres_Address, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="mobile">Experience (in Yrs ) <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Exp_In_Yrs, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Exp_In_Yrs, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="address">Physically Challenged ?<span style="color:red"><b>*</b></span></label>
+
+                        @Html.DropDownListFor(Model => Model.Physically_Challenged, new SelectList(ViewBag.Physically_Disabled, "Value", "Text"), new { @class = "form-control input-sm" })
+
+
+                        @Html.ValidationMessageFor(model => model.Physically_Challenged, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-12 col-sm-12" id="deceased">
+                    <div><h1>Bank Details</h1></div>
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="gender">Account Number <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Account_No, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Account_No, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label for="DOB"> Confirm Account Number <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Confirm_Account_No, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Confirm_Account_No, "", new { @class = "text-danger" })
+
+
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="Date">Bank Name <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Bank_Name, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.Bank_Name, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="father">IFSC Code<span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.IFSC_Code, new { @class = "form-control input-sm" })
+
+                        @Html.ValidationMessageFor(model => model.IFSC_Code, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label for="father">Branch Name <span style="color:red"><b>*</b></span></label>
+                        @Html.TextBoxFor(Model => Model.Branch_Name, new { @class = "form-control input-sm" })
+
+
+                        @Html.ValidationMessageFor(model => model.Branch_Name, "", new { @class = "text-danger" })
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group col-md-3 col-sm-3 pull-left">
+                        <input type="submit" id="btn" class="btn btn-primary" onclick="disableButtons();" value="Submit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="~/Scripts/bootstrap.min.js"></script>
+            <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript">
+                $(document).on('invalid-form.validate', 'form', function () {
+                    var button = $(this).find(':submit');
+                    setTimeout(function () {
+                        button.removeAttr('disabled');
+                    }, 1);
+                });
+                $(document).on('submit', 'form', function () {
+                    var button = $(this).find(':submit');
+                    setTimeout(function () {
+                        button.attr('disabled', 'disabled');
+                    }, 0);
+                });
+                
+            </script>
+       
+    }
+   
+</body>
+</html>

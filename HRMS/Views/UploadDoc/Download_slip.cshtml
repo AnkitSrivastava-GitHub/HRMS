@@ -1,0 +1,73 @@
+﻿
+@model HRMS.Models.Proc_DownloadSlip_Result
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/effect.css">
+    <title>Provisional certifiate</title>
+</head>
+<body>
+    <div class="container my-5 py-3">
+        <div class="row text-center">
+            <div class="col-8 tex">
+
+                <span class="MS"><h6>Registration Slip (for renewal of Cluster 3 existing employees)</h6></span>
+                <h4>Department of Agriculture, U.P</h4>
+                <h6>(Ref Work order no-Prasar 669/Cluster-3/2022-23 dated:11-Aug-2022)</h6><br /><br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <form>
+                    <label class="py-1"><h5>Registration No.<span>&nbsp; @Model.Emp_Code  </span> </h5> </label><br />
+                    <label class="py-1"><b>Name </b>&nbsp;: <Span class="para">@Model.Emp_Name</Span></label><br />
+                    <label class="py-1"><b>Father's Name</b> &nbsp;: <Span class="para">@Model.F_Name</Span></label><br />
+                    <label class="py-1"><b>DOB  </b>&nbsp;: <Span class="para">@Model.DOB</Span></label><br />
+                    <label class="py-1"><b>Mobile No. </b>&nbsp;: <Span class="para">@Model.Mobile_No</Span></label><br />
+                    <label class="py-1"><b>Address </b>&nbsp;: <Span class="para">@Model.Address</Span></label><br />
+                </form>
+            </div>
+            <div class="col-7">
+                <form>
+                    <label class="py-1"><b>Time </b>&nbsp;: <Span class="para">@DateTime.Now</Span></label><br />
+                    <label class="py-1"><b>Designation </b>&nbsp;: <Span class="para">@Model.Designation</Span></label><br />
+                    <label class="py-1"><b>Prayojana Name </b> &nbsp;: <Span class="para">@Model.Pariyojana</Span></label><br />
+                    <label class="py-1"><b>Mandal </b>&nbsp;: <Span class="para">@Model.Mandal_Name</Span></label><br />
+                    <label class="py-1 "><b>Dist </b>&nbsp;: <Span class="para">@Model.District_Name</Span></label><br />
+                    <label class="py-1 "><b>Registration type </b>&nbsp;: <Span class="para">@Model.Registration_Type</Span></label><br />
+
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-7">
+                <form>
+                    <br /> <label class="py-1 side-3"><h5>Acceptance of important guideline and declarations.</h5></label><br />
+                    @*<label class="py-1 side-4">1.Candidates will first register themselves on the portal (http://localhost:53498/Home/Emp_Details), with all the relevant and correct details. </label><br />*@
+                    <label class="py-1 side-4">1.User Id or Employee ID and Password will be auto generated through the system. </label><br />
+                    <label class="py-1 side-4">2.Candidates will have to upload all the required documents (in clear and readable format) on the portal after the registration. </label><br />
+
+
+                </form>
+            </div>
+            <div class="col-7">   <label class="py-1 side-4" style="float:right"><b>Sign</b> </label> </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
+

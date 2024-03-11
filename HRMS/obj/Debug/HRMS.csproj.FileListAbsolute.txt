@@ -1,0 +1,320 @@
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\HRMS.dll.config
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\HRMS.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\HRMS.pdb
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\csc.exe
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\csc.exe.config
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\csc.rsp
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\csi.exe
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\csi.exe.config
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\csi.rsp
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.AppContext.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Console.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.IO.Compression.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.IO.Pipes.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.Claims.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.ValueTuple.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Xml.XPath.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\vbc.exe
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\vbc.exe.config
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\vbc.rsp
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Antlr3.Runtime.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Newtonsoft.Json.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Helpers.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Mvc.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Optimization.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Razor.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.WebPages.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.WebPages.Razor.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\WebGrease.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Helpers.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Mvc.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Optimization.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.Razor.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.WebPages.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\System.Web.WebPages.Razor.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Newtonsoft.Json.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Antlr3.Runtime.pdb
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\obj\Debug\HRMS.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\obj\Debug\HRMS.pdb
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\EntityFramework.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\EntityFramework.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+C:\Users\WP\Desktop\.net projects\HRMS\HRMS\obj\Debug\HRMS.csprojAssemblyReference.cache
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\HRMS.dll.config
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\HRMS.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\HRMS.pdb
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\csc.exe
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\csc.exe.config
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\csc.rsp
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\csi.exe
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\csi.exe.config
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\csi.rsp
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.AppContext.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Console.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.IO.Compression.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.IO.Pipes.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.Claims.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.ValueTuple.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Xml.XPath.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\vbc.exe
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\vbc.exe.config
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\vbc.rsp
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Antlr3.Runtime.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\EntityFramework.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Newtonsoft.Json.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Helpers.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Mvc.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Optimization.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Razor.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.WebPages.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.WebPages.Razor.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\WebGrease.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\EntityFramework.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Helpers.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Mvc.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Optimization.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.Razor.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.WebPages.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\System.Web.WebPages.Razor.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Newtonsoft.Json.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Antlr3.Runtime.pdb
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\obj\Debug\HRMS.dll
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\obj\Debug\HRMS.pdb
+C:\Users\WP\Desktop\NEW PROJECT\HRMS\HRMS\obj\Debug\HRMS.csprojAssemblyReference.cache
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\HRMS.dll.config
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\HRMS.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\HRMS.pdb
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\csc.exe
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\csc.exe.config
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\csc.rsp
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\csi.exe
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\csi.exe.config
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\csi.rsp
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.AppContext.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Console.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.IO.Compression.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.IO.Pipes.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.Claims.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.ValueTuple.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\vbc.exe
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\vbc.exe.config
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\vbc.rsp
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Antlr3.Runtime.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\EntityFramework.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Newtonsoft.Json.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Helpers.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Mvc.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Optimization.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Razor.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.WebPages.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.WebPages.Razor.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\WebGrease.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\EntityFramework.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Helpers.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Mvc.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Optimization.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.Razor.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.WebPages.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\System.Web.WebPages.Razor.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Newtonsoft.Json.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Antlr3.Runtime.pdb
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\obj\Debug\HRMS.csproj.AssemblyReference.cache
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\obj\Debug\HRMS.dll
+C:\Users\ankit srivastav\Desktop\DOTNET PROJECTS\HRMS\HRMS\HRMS\obj\Debug\HRMS.pdb
+D:\DOTNET PROJECTS\HRMS\HRMS\obj\Debug\HRMS.csproj.AssemblyReference.cache
+D:\DOTNET PROJECTS\HRMS\HRMS\obj\Debug\HRMS.csproj.CoreCompileInputs.cache
+D:\DOTNET PROJECTS\HRMS\HRMS\obj\Debug\HRMS.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\obj\Debug\HRMS.pdb
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\HRMS.dll.config
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\HRMS.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\HRMS.pdb
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\csc.exe
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\csc.exe.config
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\csc.rsp
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\csi.exe
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\csi.exe.config
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\csi.rsp
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.Managed.Core.targets
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.AppContext.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Collections.Immutable.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Console.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.IO.Compression.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.IO.Pipes.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Reflection.Metadata.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.AccessControl.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.Claims.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Security.Principal.Windows.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.ValueTuple.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Xml.XmlDocument.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Xml.XPath.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\vbc.exe
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\vbc.exe.config
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\vbc.rsp
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\roslyn\VBCSCompiler.exe.config
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Antlr3.Runtime.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\EntityFramework.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\EntityFramework.SqlServer.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Microsoft.Web.Infrastructure.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Newtonsoft.Json.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Helpers.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Mvc.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Optimization.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Razor.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.WebPages.Deployment.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.WebPages.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.WebPages.Razor.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\WebGrease.dll
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\EntityFramework.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\EntityFramework.SqlServer.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Helpers.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Mvc.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Optimization.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.Razor.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.WebPages.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.WebPages.Deployment.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\System.Web.WebPages.Razor.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Newtonsoft.Json.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Antlr3.Runtime.pdb
+D:\DOTNET PROJECTS\HRMS\HRMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DOTNET PROJECTS\HRMS\HRMS\obj\Debug\HRMS.csproj.CopyComplete

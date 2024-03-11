@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HRMS REPORTS</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+    <link href="~/Scripts/StyleSheet1.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
+    <script type="text/javascript">
+        //$(function () {
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "/Reports/District_Pariyojana_RegCount_DocCount",
+                data: '{}',
+                //contentType: "application/json; charset=utf-8",
+                //dataType: "json",
+                success: function (obj) {
+                    var d = new Date();
+                    d + '';
+                    var i = 1;
+                    $("#tbl").DataTable({
+                        responsive: true,
+                        searching: true,
+                        bLengthChange: true,
+                        //lengthMenu: [[10, 20, -1], [10, 20, "All"]],
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            ['10 rows', '25 rows', '50 rows', 'Show all']
+                        ],
+                        bFilter: true,
+                        bSort: true,
+                        bPaginate: true,
+                        data: obj,
+                        columns: [
+                            {
+                                "render": function (data, type, full, meta) {
+                                    return '<b style="color:darkred;">' + (i++) + '</b>';
+                                }
+                            },
+                            { "data": "District_Name" },
+                            { "data": "Pariyojana" },
+                            { "data": "reg_count" },
+                            { "data": "doc_count" }
+                        ],
+                        dom: 'Bfrtip',
+                        //dom: 'Blfrtip',
+                        buttons: [
+                            {
+                                extend: 'pageLength',
+                                className: 'green'
+                            },
+
+                            {
+                                extend: 'excelHtml5',
+                                text: 'Download Excel',
+                                className: 'red',
+                                filename: 'District_Wise_pariyojana_regCount_DocCount' + d.toDateString(),//we can use it as  title: 'District_Wise_Count_' + d.toDateString()
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            'colvis',
+                        ]
+
+                    });
+                },
+                failure: function () {
+                    alert("Data not found !");
+                },
+                error: function () {
+                    alert("Some error occured !");
+                }
+
+            });
+        });
+    </script>
+    <style>
+
+        .dt-button.red {
+            color: red;
+            margin-bottom: 20px
+        }
+
+        .dt-button.orange {
+            color: orange;
+        }
+
+        .dt-button.green {
+            color: green;
+        }
+    </style>
+
+</head>
+<body>
+    <h2><b>HRMS REPORTS<br /><br /><span style="color:skyblue">DISTRICT WISE PARIYOJANA WISE REGISTRATION COUNT DOC COUNT</span></b></h2>
+
+    <div class="table-wrapper">
+        <div>
+            <h4><b><i class="fa fa-arrow-circle-left" style="font-size:24px;color:dodgerblue;"></i> &nbsp;@Html.ActionLink("REPORT PANEL", "ReportPanel", "Reports")</b></h4>
+        </div>
+        <br />
+        <table id="tbl" cellspacing="0" class="table table-bordered fl-table">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>DISTRICT NAME</th>
+                    <th>PARIYOJANA NAME</th>
+                    <th>REGISTRATION COUNT</th>
+                    <th>DOCUMENT COUNT</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>
